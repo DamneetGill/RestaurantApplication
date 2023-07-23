@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="738.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.HomeController">
    <children>
-      <MenuBar layoutX="6.0" prefHeight="31.0" prefWidth="1090.0">
+      <MenuBar layoutY="-2.0" prefHeight="31.0" prefWidth="1162.0">
         <menus>
           <Menu mnemonicParsing="false" text="Menu" />
           <Menu mnemonicParsing="false" text="Find Restaurant" />
@@ -17,11 +17,26 @@
             <Menu mnemonicParsing="false" text="About Us" />
         </menus>
       </MenuBar>
-      <ImageView fx:id="HomeImage" fitHeight="400.0" fitWidth="556.0" layoutX="494.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="179.0">
+      <ImageView fx:id="HomeImage" fitHeight="400.0" fitWidth="322.0" layoutX="532.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="35.0">
          <image>
-            <Image url="@../../../stylish-restaurant-interior-for-dinner-and-rest-with-great-cocktails.jpg" />
+            <Image url="@../../../d55b8bf08f4ba29545ef9d3ba236273d.jpg" />
          </image>
       </ImageView>
       <Label contentDisplay="CENTER" layoutX="123.0" layoutY="160.0" prefHeight="62.0" prefWidth="67.0" text="About Us" textOverrun="CENTER_ELLIPSIS" />
+      <ImageView fitHeight="400.0" fitWidth="322.0" layoutX="799.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../01ee8f5f19585b5aefde1d444bcdbd74.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="322.0" layoutX="532.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../be93ef97205d094c368f1d218b7a7bd0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="322.0" layoutX="799.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../b8f90af6602d68d7db4cbe0f09be0c03.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
