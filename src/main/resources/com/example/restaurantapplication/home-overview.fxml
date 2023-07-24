@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="738.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.HomeController">
    <children>
       <MenuBar layoutY="-2.0" prefHeight="31.0" prefWidth="1162.0">
         <menus>
           <Menu mnemonicParsing="false" text="Menu" />
-          <Menu mnemonicParsing="false" text="Find Restaurant" />
-          <Menu mnemonicParsing="false" text="Order" />
-            <Menu mnemonicParsing="false" text="About Us" />
+          <Menu mnemonicParsing="false" text="Make Reservation" />
+          <Menu mnemonicParsing="false" text="Order Now" />
         </menus>
       </MenuBar>
       <ImageView fx:id="HomeImage" fitHeight="294.0" fitWidth="220.0" layoutX="666.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="75.0">
@@ -23,7 +23,6 @@
             <Image url="@../../../d55b8bf08f4ba29545ef9d3ba236273d.jpg" />
          </image>
       </ImageView>
-      <Label contentDisplay="CENTER" layoutX="123.0" layoutY="160.0" prefHeight="62.0" prefWidth="67.0" text="About Us" textOverrun="CENTER_ELLIPSIS" />
       <ImageView fitHeight="341.0" fitWidth="239.0" layoutX="875.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../7336027dc873854e0607c644515c1e1d.jpg" />
@@ -42,5 +41,15 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="52.0" stroke="#eb680c" strokeType="INSIDE" width="840.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="635.0" layoutX="23.0" layoutY="68.0" stroke="#eb680c" strokeType="INSIDE" width="8.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="711.0" stroke="#eb680c" strokeType="INSIDE" width="573.0" />
+      <Text layoutX="215.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Us">
+         <font>
+            <Font name="Pristina" size="64.0" />
+         </font>
+      </Text>
+      <Text layoutX="113.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our restaurant - where speed and culinary excellence meet! Order your favorite meal with just a few clicks using our take-away service and enjoy it in the comfort of your home. &#10;If you prefer the restaurant atmosphere, reserve a table and savor our dishes prepared with care and passion. &#10;Our diverse menu caters to every palate, from traditional cuisine to international delights. &#10;&quot;Fast but well-done&quot; is our motto, and we are ready to offer you an unforgettable gastronomic experience. Discover our promotions on the website.&#10;We look forward to hosting you for an extraordinary culinary journey!" wrappingWidth="459.20004272460926">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
