@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane prefHeight="738.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.HomeController">
    <children>
@@ -17,26 +18,29 @@
             <Menu mnemonicParsing="false" text="About Us" />
         </menus>
       </MenuBar>
-      <ImageView fx:id="HomeImage" fitHeight="400.0" fitWidth="322.0" layoutX="532.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="35.0">
+      <ImageView fx:id="HomeImage" fitHeight="294.0" fitWidth="220.0" layoutX="666.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="75.0">
          <image>
             <Image url="@../../../d55b8bf08f4ba29545ef9d3ba236273d.jpg" />
          </image>
       </ImageView>
       <Label contentDisplay="CENTER" layoutX="123.0" layoutY="160.0" prefHeight="62.0" prefWidth="67.0" text="About Us" textOverrun="CENTER_ELLIPSIS" />
-      <ImageView fitHeight="400.0" fitWidth="322.0" layoutX="799.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="341.0" fitWidth="239.0" layoutX="875.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../01ee8f5f19585b5aefde1d444bcdbd74.jpg" />
+            <Image url="@../../../7336027dc873854e0607c644515c1e1d.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="400.0" fitWidth="322.0" layoutX="532.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="341.0" fitWidth="237.0" layoutX="610.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../be93ef97205d094c368f1d218b7a7bd0.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="400.0" fitWidth="322.0" layoutX="799.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="330.0" fitWidth="204.0" layoutX="853.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../b8f90af6602d68d7db4cbe0f09be0c03.jpg" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="52.0" stroke="#eb680c" strokeType="INSIDE" width="840.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="635.0" layoutX="23.0" layoutY="68.0" stroke="#eb680c" strokeType="INSIDE" width="8.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="711.0" stroke="#eb680c" strokeType="INSIDE" width="573.0" />
    </children>
 </AnchorPane>

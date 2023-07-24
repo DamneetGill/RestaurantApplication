@@ -11,7 +11,7 @@ public class RestaurantApplication extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("home-overview.fxml"));
         Scene scene = new Scene(root);
-        stage.setTitle("Home Application");
+        stage.setTitle("Restaurant");
         stage.setScene(scene);
         stage.show();
     }
