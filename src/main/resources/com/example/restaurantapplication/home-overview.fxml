@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,47 +8,50 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="738.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.HomeController">
+<AnchorPane prefHeight="738.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.HomeController">
    <children>
-      <MenuBar layoutY="-2.0" prefHeight="31.0" prefWidth="1162.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Menu" />
-          <Menu mnemonicParsing="false" text="Make Reservation" />
-          <Menu mnemonicParsing="false" text="Order Now" />
-        </menus>
-      </MenuBar>
-      <ImageView fx:id="HomeImage" fitHeight="294.0" fitWidth="220.0" layoutX="666.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="75.0">
+      <ImageView fx:id="HomeImage" fitHeight="282.0" fitWidth="198.0" layoutX="675.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="59.0">
          <image>
             <Image url="@../../../d55b8bf08f4ba29545ef9d3ba236273d.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="341.0" fitWidth="239.0" layoutX="875.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="341.0" fitWidth="227.0" layoutX="873.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../7336027dc873854e0607c644515c1e1d.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="341.0" fitWidth="237.0" layoutX="610.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="341.0" fitWidth="237.0" layoutX="651.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../be93ef97205d094c368f1d218b7a7bd0.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="330.0" fitWidth="204.0" layoutX="853.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="330.0" fitWidth="204.0" layoutX="888.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../b8f90af6602d68d7db4cbe0f09be0c03.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="52.0" stroke="#eb680c" strokeType="INSIDE" width="840.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="635.0" layoutX="23.0" layoutY="68.0" stroke="#eb680c" strokeType="INSIDE" width="8.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="711.0" stroke="#eb680c" strokeType="INSIDE" width="573.0" />
-      <Text layoutX="215.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Us">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="34.0" stroke="#eb680c" strokeType="INSIDE" width="840.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="635.0" layoutX="23.0" layoutY="52.0" stroke="#eb680c" strokeType="INSIDE" width="8.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="697.0" stroke="#eb680c" strokeType="INSIDE" width="615.0" />
+      <Text layoutX="214.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Us">
          <font>
             <Font name="Pristina" size="64.0" />
          </font>
       </Text>
-      <Text layoutX="113.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our restaurant - where speed and culinary excellence meet! Order your favorite meal with just a few clicks using our take-away service and enjoy it in the comfort of your home. &#10;If you prefer the restaurant atmosphere, reserve a table and savor our dishes prepared with care and passion. &#10;Our diverse menu caters to every palate, from traditional cuisine to international delights. &#10;&quot;Fast but well-done&quot; is our motto, and we are ready to offer you an unforgettable gastronomic experience. Discover our promotions on the website.&#10;We look forward to hosting you for an extraordinary culinary journey!" wrappingWidth="459.20004272460926">
+      <Text layoutX="109.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our restaurant - where speed and culinary excellence meet! Order your favorite meal with just a few clicks using our take-away service and enjoy it in the comfort of your home. &#10;If you prefer the restaurant atmosphere, reserve a table and savor our dishes prepared with care and passion. &#10;Our diverse menu caters to every palate, from traditional cuisine to international delights. &#10;&quot;Fast but well-done&quot; is our motto, and we are ready to offer you an unforgettable gastronomic experience. Discover our promotions on the website.&#10;We look forward to hosting you for an extraordinary culinary journey!" wrappingWidth="459.20004272460926">
          <font>
             <Font name="Constantia" size="18.0" />
          </font>
       </Text>
+      <Button layoutX="124.0" layoutY="567.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="106.0" style="-fx-background-color: #eb680c;" text="Order Now">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="378.0" layoutY="566.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="161.0" style="-fx-background-color: #eb680c;" text="Make Reservation">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
