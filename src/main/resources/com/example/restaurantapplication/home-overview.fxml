@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,7 +11,7 @@
 
 <AnchorPane prefHeight="738.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.HomeController">
    <children>
-      <ImageView fx:id="HomeImage" fitHeight="282.0" fitWidth="198.0" layoutX="675.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="59.0">
+      <ImageView fitHeight="282.0" fitWidth="198.0" layoutX="675.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="59.0">
          <image>
             <Image url="@../../../d55b8bf08f4ba29545ef9d3ba236273d.jpg" />
          </image>
@@ -43,15 +44,21 @@
             <Font name="Constantia" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="124.0" layoutY="567.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="106.0" style="-fx-background-color: #eb680c;" text="Order Now">
+      <Button fx:id="OrderButton" layoutX="124.0" layoutY="567.0" mnemonicParsing="false" onAction="#handleOrder" prefHeight="33.0" prefWidth="106.0" style="-fx-background-color: #eb680c;" text="Order Now">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button layoutX="378.0" layoutY="566.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="161.0" style="-fx-background-color: #eb680c;" text="Make Reservation">
+      <Button fx:id="ReservationButton" layoutX="378.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleReservation" prefHeight="34.0" prefWidth="161.0" style="-fx-background-color: #eb680c;" text="Make Reservation">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>

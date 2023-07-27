@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="738.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.LoginController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="635.0" layoutX="23.0" layoutY="52.0" stroke="#eb680c" strokeType="INSIDE" width="8.0" />
+      <Text fill="#eb680c" layoutX="450.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN" AnchorPane.topAnchor="142.0">
+         <font>
+            <Font name="Bookman Old Style" size="64.0" />
+         </font>
+      </Text>
+      <TextField layoutX="450.0" layoutY="285.0" prefHeight="26.0" prefWidth="223.0" promptText="Username" AnchorPane.topAnchor="285.0" />
+      <TextField layoutX="450.0" layoutY="366.0" prefHeight="26.0" prefWidth="223.0" promptText="Password" />
+      <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="424.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="424.0">
+         <image>
+            <Image url="@../../../username-1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="673.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../password-76.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="532.0" layoutY="438.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #eb680c;" text="Login">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="697.0" stroke="#eb680c" strokeType="INSIDE" width="1046.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="34.0" stroke="#eb680c" strokeType="INSIDE" width="1046.0" />
+      <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../homeIcon.png" />
+         </image>
+      </ImageView>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
