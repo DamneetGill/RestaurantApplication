@@ -9,42 +9,42 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="738.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.HomeController">
    <children>
-      <ImageView fitHeight="282.0" fitWidth="198.0" layoutX="675.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="59.0">
+      <ImageView fitHeight="282.0" fitWidth="180.0" layoutX="680.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="43.0">
          <image>
             <Image url="@../../../d55b8bf08f4ba29545ef9d3ba236273d.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="341.0" fitWidth="227.0" layoutX="873.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="328.0" fitWidth="219.0" layoutX="873.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../7336027dc873854e0607c644515c1e1d.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="341.0" fitWidth="237.0" layoutX="651.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="328.0" fitWidth="247.0" layoutX="647.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../be93ef97205d094c368f1d218b7a7bd0.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="330.0" fitWidth="204.0" layoutX="888.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="282.0" fitWidth="206.0" layoutX="879.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../b8f90af6602d68d7db4cbe0f09be0c03.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="34.0" stroke="#eb680c" strokeType="INSIDE" width="840.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="635.0" layoutX="23.0" layoutY="52.0" stroke="#eb680c" strokeType="INSIDE" width="8.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="697.0" stroke="#eb680c" strokeType="INSIDE" width="615.0" />
-      <Text layoutX="214.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Us">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="34.0" stroke="#eb680c" strokeType="INSIDE" width="840.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="595.0" layoutX="16.0" layoutY="46.0" stroke="#eb680c" strokeType="INSIDE" width="8.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="697.0" stroke="#eb680c" strokeType="INSIDE" width="615.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+      <Text layoutX="225.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Us">
          <font>
             <Font name="Pristina" size="64.0" />
          </font>
       </Text>
-      <Text layoutX="109.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our restaurant - where speed and culinary excellence meet! Order your favorite meal with just a few clicks using our take-away service and enjoy it in the comfort of your home. &#10;If you prefer the restaurant atmosphere, reserve a table and savor our dishes prepared with care and passion. &#10;Our diverse menu caters to every palate, from traditional cuisine to international delights. &#10;&quot;Fast but well-done&quot; is our motto, and we are ready to offer you an unforgettable gastronomic experience. Discover our promotions on the website.&#10;We look forward to hosting you for an extraordinary culinary journey!" wrappingWidth="459.20004272460926">
+      <Text layoutX="103.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our restaurant - where speed and culinary excellence meet! Order your favorite meal with just a few clicks using our take-away service and enjoy it in the comfort of your home. &#10;If you prefer the restaurant atmosphere, reserve a table and savor our dishes prepared with care and passion. &#10;Our diverse menu caters to every palate, from traditional cuisine to international delights. &#10;&quot;Fast but well-done&quot; is our motto, and we are ready to offer you an unforgettable gastronomic experience. Discover our promotions on the website.&#10;We look forward to hosting you for an extraordinary culinary journey!" wrappingWidth="459.20004272460926">
          <font>
             <Font name="Constantia" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="OrderButton" layoutX="124.0" layoutY="567.0" mnemonicParsing="false" onAction="#handleOrder" prefHeight="33.0" prefWidth="106.0" style="-fx-background-color: #eb680c;" text="Order Now">
+      <Button fx:id="OrderButton" layoutX="136.0" layoutY="553.0" mnemonicParsing="false" onAction="#handleOrder" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #eb680c;" text="Order Now">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -52,7 +52,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="ReservationButton" layoutX="378.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleReservation" prefHeight="34.0" prefWidth="161.0" style="-fx-background-color: #eb680c;" text="Make Reservation">
+      <Button fx:id="ReservationButton" layoutX="327.0" layoutY="552.0" mnemonicParsing="false" onAction="#handleReservation" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #eb680c;" text="Make Reservation">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>

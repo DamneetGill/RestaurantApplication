@@ -14,6 +14,7 @@ public class RestaurantApplication extends Application {
         stage.setTitle("Restaurant");
         stage.setScene(scene);
         stage.show();
+        stage.setResizable(false);
     }
 
 
