@@ -22,12 +22,12 @@
       <TextField layoutX="445.0" layoutY="312.0" prefHeight="26.0" prefWidth="223.0" promptText="Password" AnchorPane.topAnchor="312.0" />
       <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="419.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="419.0" AnchorPane.topAnchor="262.0">
          <image>
-            <Image url="@../../../username-1.png" />
+            <Image url="@img/username-1.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="419.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="312.0">
          <image>
-            <Image url="@../../../password-76.png" />
+            <Image url="@img/password-76.png" />
          </image>
       </ImageView>
       <Button layoutX="513.0" layoutY="382.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #eb680c;" text="Login">
