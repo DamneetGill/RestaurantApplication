@@ -22,7 +22,7 @@ public class HomeController {
 
 
     @FXML
-    void handleOrder(ActionEvent event) throws Exception {
+    public void handleOrder(ActionEvent event) throws Exception {
 
         /*open the sign-in/login window*/
         Stage login = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -33,7 +33,7 @@ public class HomeController {
     }
 
     @FXML
-    void handleReservation(ActionEvent event) {
+    public void handleReservation(ActionEvent event) {
 
     }
 
