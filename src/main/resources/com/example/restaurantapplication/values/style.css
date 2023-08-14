@@ -4,7 +4,7 @@
 }
 
 .transparent{
-    -fx-background-color: rgba(0,0,0,0);
+    -fx-background-color:rgba(0,0,0,0);
 }
 
 .search-button{
@@ -13,7 +13,9 @@
 }
 
 .left-bar{
-    -fx-background-color:#D3D3D3;
+/*#336A92*/
+/*195885*/
+    -fx-background-color:#084A69;
     -fx-background-radius:30;
 }
 
@@ -29,5 +31,15 @@
 .add-rmv-box{
     -fx-background-color: rgba(255,255,255,0.3);
     -fx-background-radius:30;
+}
+
+.anchor-pane{
+    -fx-background-color:#f4f4f2;
+}
+
+.plate{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius:30;
+
 }
 
