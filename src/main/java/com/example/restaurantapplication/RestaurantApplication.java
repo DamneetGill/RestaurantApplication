@@ -9,11 +9,12 @@ import javafx.stage.Stage;
 public class RestaurantApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("login/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("dish-overview.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Restaurant");
         stage.setScene(scene);
         stage.show();
+        stage.setResizable(false);
     }
 
 

@@ -4,17 +4,19 @@
 }
 
 .transparent{
-    -fx-background-color: rgba(0,0,0,0);
+    -fx-background-color:rgba(0,0,0,0);
 }
 
 .search-button{
     -fx-background-color:#828282;
-    -fx-background-radius:20;
+    -fx-background-radius:30;
 }
 
 .left-bar{
-    -fx-background-color:#D3D3D3;
-    -fx-background-radius:20;
+/*#336A92*/
+/*195885*/
+    -fx-background-color:#084A69;
+    -fx-background-radius:30;
 }
 
 .shadow{
@@ -23,11 +25,21 @@
 
 .chosen-dish-card{
     -fx-background-color:#FFFFFF;
-    -fx-background-radius:20;
+    -fx-background-radius:30;
 }
 
 .add-rmv-box{
     -fx-background-color: rgba(255,255,255,0.3);
-    -fx-background-radius:20;
+    -fx-background-radius:30;
+}
+
+.anchor-pane{
+    -fx-background-color:#f4f4f2;
+}
+
+.plate{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius:30;
+
 }
 
