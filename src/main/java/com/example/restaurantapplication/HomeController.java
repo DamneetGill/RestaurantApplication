@@ -26,7 +26,7 @@ public class HomeController {
 
         /*open the sign-in/login window*/
         Stage login = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("login-overview.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("sample-overview.fxml"));
         Scene scene = new Scene(root);
         login.setScene(scene);
         login.show();

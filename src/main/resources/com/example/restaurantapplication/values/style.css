@@ -9,12 +9,12 @@
 
 .search-button{
     -fx-background-color:#828282;
-    -fx-background-radius:30;
+    -fx-background-radius:20;
 }
 
 .left-bar{
     -fx-background-color:#D3D3D3;
-    -fx-background-radius:30;
+    -fx-background-radius:20;
 }
 
 .shadow{
@@ -23,11 +23,11 @@
 
 .chosen-dish-card{
     -fx-background-color:#FFFFFF;
-    -fx-background-radius:30;
+    -fx-background-radius:20;
 }
 
 .add-rmv-box{
     -fx-background-color: rgba(255,255,255,0.3);
-    -fx-background-radius:30;
+    -fx-background-radius:20;
 }
 
