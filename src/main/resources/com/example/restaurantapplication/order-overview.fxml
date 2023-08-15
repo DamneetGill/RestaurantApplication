@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,7 +16,7 @@
 
 <AnchorPane prefHeight="675.0" prefWidth="1109.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.OrderController">
    <children>
-      <VBox layoutX="-5.0" layoutY="-4.0" prefHeight="686.0" prefWidth="332.0">
+      <VBox layoutX="-5.0" layoutY="-4.0" prefHeight="782.0" prefWidth="341.0">
          <children>
             <Text fill="#eb680c" strokeType="OUTSIDE" strokeWidth="0.0" text="Casa Mia" wrappingWidth="144.66796875">
                <font>
@@ -27,22 +26,22 @@
                   <Insets bottom="10.0" left="100.0" top="15.0" />
                </VBox.margin>
             </Text>
-            <VBox fx:id="ChosenPlate" prefHeight="591.0" prefWidth="312.0" styleClass="left-bar" stylesheets="@values/style.css">
+            <VBox fx:id="ChosenPlate" prefHeight="686.0" prefWidth="374.0" styleClass="left-bar" stylesheets="@values/style.css">
                <VBox.margin>
                   <Insets left="20.0" top="-1.0" />
                </VBox.margin>
                <children>
-                  <Label fx:id="ChosenPlateName" prefHeight="45.0" prefWidth="248.0" text="Mushroom risotto" textFill="WHITE">
+                  <Label fx:id="ChosenPlateName" prefHeight="23.0" prefWidth="202.0" text="Mushroom risotto" textFill="WHITE" VBox.vgrow="ALWAYS">
                      <font>
-                        <Font name="Cambria Bold" size="27.0" />
+                        <Font name="Cambria Bold" size="19.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="-85.0" left="45.0" top="9.0" />
+                        <Insets bottom="-85.0" left="55.0" top="9.0" />
                      </VBox.margin>
                   </Label>
                   <ImageView fx:id="ChosenPlateImage" fitHeight="312.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/mushroom_risotto.jpeg" />
+                        <Image url="@img/blueberry_pie.png" />
                      </image>
                      <VBox.margin>
                         <Insets bottom="100.0" left="55.0" top="95.0" />
@@ -56,14 +55,22 @@
                         <Insets left="10.0" top="-85.0" />
                      </VBox.margin>
                   </Text>
-                  <Label fx:id="ChosenPlateInfo" text="Risotto with mushroom and pepper" textFill="WHITE">
-                     <font>
-                        <Font name="Cambria Bold" size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="8.0" top="10.0" />
-                     </VBox.margin>
-                  </Label>
+                  <HBox prefHeight="85.0" prefWidth="322.0">
+                     <children>
+                        <ScrollPane prefHeight="36.0" prefWidth="298.0">
+                           <content>
+                              <Label fx:id="ChosenPlateInfo" prefHeight="19.0" prefWidth="837.0" text="Pan-seared steak with garlic butter and accompanied with mashed potatoes, broccoli and mushrooms">
+                                 <font>
+                                    <Font name="Cambria Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </content>
+                           <HBox.margin>
+                              <Insets left="10.0" top="3.0" />
+                           </HBox.margin>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
                   <Label fx:id="ChosenPlatePrice" text="€12.99" textFill="WHITE">
                      <font>
                         <Font name="Cambria Bold" size="25.0" />
@@ -141,7 +148,6 @@
          </children>
       </VBox>
       <VBox layoutX="493.0" layoutY="142.0" prefHeight="42.0" prefWidth="248.0" />
-      <Separator layoutX="334.0" orientation="VERTICAL" prefHeight="752.0" prefWidth="0.0" />
       <HBox layoutX="336.0" layoutY="-1.0" prefHeight="758.0" prefWidth="784.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="336.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ScrollPane fx:id="Scroll" prefHeight="752.0" prefWidth="773.0" styleClass="transparent" stylesheets="@values/style.css">

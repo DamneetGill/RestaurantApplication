@@ -1,5 +1,7 @@
 package com.example.restaurantapplication;
 
+import java.net.URL;
+
 public class Plate {
      String plateName;
      double platePrice;
