@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="675.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.login.LogInController">
+   <children>
+      <Region layoutX="30.0" layoutY="30.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Region layoutX="20.0" layoutY="35.0" prefHeight="1086.0" prefWidth="8.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="40.0" />
+      <Region layoutX="223.0" layoutY="72.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <BorderPane layoutX="200.0" layoutY="247.0" prefHeight="675.0" prefWidth="1109.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="chosen-dish-card" stylesheets="@../values/style.css">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="202.0">
+                     <children>
+                        <ImageView fitHeight="52.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/login/fork-knife.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="LOGIN">
+                           <font>
+                              <Font name="Cambria Bold" size="48.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="40.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/login/user-2.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="tf_username" prefHeight="50.0" prefWidth="250.0" promptText="Username" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@../values/style.css">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/login/lock-close-2.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="tf_password" prefHeight="50.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@../values/style.css">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="button_log_in" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" styleClass="shadow" stylesheets="@../values/style.css" text="Login">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="270.0" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Not a user?">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="button_sign_up" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" stylesheets="@../values/style.css" text="Sign Up" underline="true">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>

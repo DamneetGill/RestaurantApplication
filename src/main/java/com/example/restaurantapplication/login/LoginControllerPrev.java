@@ -1,4 +1,4 @@
-package com.example.restaurantapplication;
+package com.example.restaurantapplication.login;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,10 +10,9 @@ import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
-public class LoginController {
+public class LoginControllerPrev {
     @FXML
     private Button cancelButton;
     @FXML
@@ -37,7 +36,7 @@ public class LoginController {
         if (tfUsername.getText().isBlank() == true || pfPassword.getText().isBlank() == true) {
             loginLabel.setText("please insert username and password");
         }
-        LoginDatabaseConnection connection = new LoginDatabaseConnection();
+        LoginDatabaseConnectionPrev connection = new LoginDatabaseConnectionPrev();
         Connection connectDB = connection.getConnection();
         String verify = "SELECT count(1) FROM useraccounts WHERE username='" + tfUsername.getText() + "' AND password='" + pfPassword.getText() + "'";
         try{

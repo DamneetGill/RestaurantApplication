@@ -1,11 +1,9 @@
-package com.example.restaurantapplication;
+package com.example.restaurantapplication.login;
 
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
-public class LoginDatabaseConnection {
+public class LoginDatabaseConnectionPrev {
     public Connection databaseLink;
 
     public Connection getConnection() {
