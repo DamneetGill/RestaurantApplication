@@ -148,7 +148,7 @@
          </children>
       </VBox>
       <VBox layoutX="493.0" layoutY="142.0" prefHeight="42.0" prefWidth="248.0" />
-      <HBox layoutX="336.0" layoutY="-1.0" prefHeight="758.0" prefWidth="784.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="336.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutX="336.0" layoutY="-1.0" prefHeight="778.0" prefWidth="775.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="336.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
          <children>
             <ScrollPane fx:id="Scroll" prefHeight="752.0" prefWidth="773.0" styleClass="transparent" stylesheets="@values/style.css">
                <content>
