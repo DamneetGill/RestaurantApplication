@@ -26,11 +26,12 @@ public class SignUpController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ToggleGroup toggleGroup = new ToggleGroup();
 
-        button_log_in.setOnAction(new EventHandler<ActionEvent>() {
+        button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 if (!tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()) {
-                    DBUtils.logInUser(event, tf_username.getText(), tf_password.getText());
+                    System.out.println("bb");
+                    DBUtils.signUpUser(event, tf_username.getText(), tf_password.getText());
                 } else {
                     System.out.println("Please fill in all information");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -39,10 +40,10 @@ public class SignUpController implements Initializable {
                 }
             }
         });
-        button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
+        button_log_in.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "sample.fxml", "Sign up!", null);
+                DBUtils.changeScene(event, "sample.fxml", "Log in!", null);
             }
         });
     }

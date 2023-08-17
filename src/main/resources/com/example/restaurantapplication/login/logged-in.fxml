@@ -20,9 +20,9 @@
          <center>
             <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="chosen-dish-card" stylesheets="@../values/style.css" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="202.0">
+                  <HBox alignment="CENTER" prefHeight="282.0" prefWidth="400.0">
                      <children>
-                        <Label fx:id="label_welcome" text="Welcome!">
+                        <Label fx:id="label_welcome" alignment="CENTER" prefHeight="279.0" prefWidth="462.0" text="Welcome!">
                            <font>
                               <Font name="Cambria Bold" size="48.0" />
                            </font>
@@ -37,7 +37,7 @@
                   </HBox>
                   <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="340.0" prefHeight="237.0" prefWidth="400.0">
                      <children>
-                        <Button fx:id="button_log_out1" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" styleClass="shadow" stylesheets="@../values/style.css" text="Logout">
+                        <Button fx:id="button_log_out" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" styleClass="shadow" stylesheets="@../values/style.css" text="Logout">
                            <font>
                               <Font name="Cambria" size="18.0" />
                            </font>

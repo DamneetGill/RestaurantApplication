@@ -13,22 +13,22 @@
    <children>
       <ImageView fitHeight="282.0" fitWidth="180.0" layoutX="680.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="43.0">
          <image>
-            <Image url="@img/home_1.jpeg" />
+            <Image url="@img/home_1.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="328.0" fitWidth="1401.0" layoutX="873.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/home_2.jpeg" />
+            <Image url="@img/home_2.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="328.0" fitWidth="247.0" layoutX="647.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/home_3.jpeg" />
+            <Image url="@img/home_3.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="282.0" fitWidth="256.0" layoutX="879.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/gnocchi.jpeg" />
+            <Image url="@img/gnocchi.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb680c" height="8.0" layoutX="23.0" layoutY="34.0" stroke="#eb680c" strokeType="INSIDE" width="840.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
