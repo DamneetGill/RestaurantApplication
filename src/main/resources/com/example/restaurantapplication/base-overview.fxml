@@ -16,7 +16,7 @@
         <Cursor fx:constant="DEFAULT" />
     </cursor>
    <children>
-      <VBox layoutX="71.0" layoutY="14.0" onMousePressed="#click" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="71.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#click" prefHeight="200.0" prefWidth="220.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="64.0" prefWidth="226.0">
                <children>
@@ -38,12 +38,12 @@
                   </Label>
                </children>
             </HBox>
-            <ImageView fx:id="PlateImage" fitHeight="150.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="PlateImage" fitHeight="150.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
-                  <Insets bottom="10.0" left="65.0" />
+                  <Insets bottom="10.0" left="60.0" />
                </VBox.margin>
                <image>
-                  <Image url="@img/gnocchi.jpeg" />
+                  <Image url="@img/mushroom_risotto.png" />
                </image>
             </ImageView>
          </children>

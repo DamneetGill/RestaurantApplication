@@ -67,6 +67,13 @@ public class OrderController implements Initializable {
         plates.add(plate);
 
         plate=new Plate();
+        plate.setPlateName("Apple Ricotta Baskets");
+        plate.setPlatePrice(3.50);
+        plate.setPlateInformation("Baskets of bread, filled with ricotta and roasted apple ");
+        plate.setImageLink("/com/example/restaurantapplication/img/ricotta_mela.png");
+        plates.add(plate);
+
+        plate=new Plate();
         plate.setPlateName("Mushroom Risotto");
         plate.setPlatePrice(12.99);
         plate.setPlateInformation("Risotto with Parmesan cheese, white wine and mushrooms");
@@ -198,8 +205,8 @@ public class OrderController implements Initializable {
             column++;
             Grid.add(anchorPane,column, row); //(child,column,row)
             //set grid width
-            Grid.setMinWidth(Region.USE_COMPUTED_SIZE);
-            Grid.setPrefWidth(Region.USE_COMPUTED_SIZE);
+            Grid.setMinWidth(Region.USE_PREF_SIZE);
+            Grid.setPrefWidth(Region.USE_PREF_SIZE);
             Grid.setMaxWidth(Region.USE_PREF_SIZE);
 
             //set grid height
