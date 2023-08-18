@@ -47,7 +47,8 @@ public class OrderController implements Initializable {
     private Button PlusButton;
     @FXML
     private Label TotalPrice;
-
+    @FXML
+    private Button CancelOrderButton;
     @FXML
     private ScrollPane Scroll;
     private List<Plate> plates = new ArrayList<>();
@@ -180,7 +181,7 @@ public class OrderController implements Initializable {
 
     private void setChosenPlate(Plate plate) {
         ChosenPlateName.setText(plate.getPlateName());
-        String price = String.format(Locale.US,"%.2f", plate.getPlatePrice());
+        String price = String.format(Locale.US, "%.2f", plate.getPlatePrice());
         ChosenPlatePrice.setText(price);
         Image image = new Image(plate.getImageLink());
         image = new Image(getClass().getResourceAsStream(plate.getImageLink()));
@@ -230,7 +231,7 @@ public class OrderController implements Initializable {
                 Grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
                 Grid.setMaxHeight(Region.USE_PREF_SIZE);
 
-                GridPane.setMargin(anchorPane, new Insets(15));
+                GridPane.setMargin(anchorPane, new Insets(10));
             }
         } catch (
                 IOException e) {
@@ -251,19 +252,20 @@ public class OrderController implements Initializable {
             PlateQuantity.setText(Integer.toString(plateQuantity));
         }
     }
-    public void handleAddToCartButton(ActionEvent e){
-        //totale corrente
-        Double currentTotal=Double.parseDouble(TotalPrice.getText().toString());
-        System.out.println(currentTotal);
-        //quantità
-        Integer quantity=Integer.parseInt(PlateQuantity.getText().toString());
-        System.out.println(quantity);
-        Double plateTotal=Double.parseDouble(ChosenPlatePrice.getText().toString());
-        plateTotal*=quantity;
-        currentTotal+=plateTotal;
-        System.out.println(plateTotal);
-        String current = String.format(Locale.US,"%.2f", currentTotal);
+
+    public void handleAddToCartButton(ActionEvent e) {
+
+        Double currentTotal = Double.parseDouble(TotalPrice.getText().toString());
+        Integer quantity = Integer.parseInt(PlateQuantity.getText().toString());
+        Double plateTotal = Double.parseDouble(ChosenPlatePrice.getText().toString());
+        plateTotal *= quantity;
+        currentTotal += plateTotal;
+
+        String current = String.format(Locale.US, "%.2f", currentTotal);
         TotalPrice.setText(current);
 
+    }
+    public void handleCancelOrderButton(ActionEvent e){
+        TotalPrice.setText("0");
     }
 }
