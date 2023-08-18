@@ -173,6 +173,7 @@ public class OrderController implements Initializable {
         image = new Image(getClass().getResourceAsStream(plate.getImageLink()));
         ChosenPlateImage.setImage(image);
         ChosenPlateInfo.setText(plate.getPlateInformation());
+        ChosenPlateInfo.setWrapText(true);
     }
 
 
