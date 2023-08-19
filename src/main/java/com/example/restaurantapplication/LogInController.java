@@ -1,10 +1,11 @@
-package com.example.restaurantapplication.login;
+package com.example.restaurantapplication;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -19,10 +20,11 @@ public class LogInController implements Initializable {
     @FXML
     private TextField tf_username;
     @FXML
-    private TextField tf_password;
+    private PasswordField tf_password;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+     System.out.println("0");
         button_log_in.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle (ActionEvent event){
@@ -32,7 +34,7 @@ public class LogInController implements Initializable {
         button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle (ActionEvent event){
-                DBUtils.changeScene(event, "sign-up.fxml","Sign up!", null);
+                DBUtils.changeScene(event, "sign-up.fxml","Sign up now at \"Casa Mia Restaurant\"", null);
             }
         });
     }

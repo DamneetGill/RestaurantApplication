@@ -5,6 +5,4 @@ module com.example.restaurantapplication {
 
     opens com.example.restaurantapplication to javafx.fxml;
     exports com.example.restaurantapplication;
-    exports com.example.restaurantapplication.login;
-    opens com.example.restaurantapplication.login to javafx.fxml;
 }

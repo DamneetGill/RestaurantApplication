@@ -1,13 +1,10 @@
-package com.example.restaurantapplication.login;
+package com.example.restaurantapplication;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +17,7 @@ public class SignUpController implements Initializable {
     @FXML
     private TextField tf_username;
     @FXML
-    private TextField tf_password;
+    private PasswordField tf_password;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -30,7 +27,6 @@ public class SignUpController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if (!tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()) {
-                    System.out.println("bb");
                     DBUtils.signUpUser(event, tf_username.getText(), tf_password.getText());
                 } else {
                     System.out.println("Please fill in all information");
@@ -43,7 +39,7 @@ public class SignUpController implements Initializable {
         button_log_in.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "sample.fxml", "Log in!", null);
+                DBUtils.changeScene(event, "sample.fxml", "Log in now at \"Casa Mia Restaurant\"", null);
             }
         });
     }

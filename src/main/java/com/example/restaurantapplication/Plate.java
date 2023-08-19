@@ -3,17 +3,17 @@ package com.example.restaurantapplication;
 import java.net.URL;
 
 public class Plate {
-     String plateName;
-     double platePrice;
-     String imageLink;
-     String plateInformation;
+    String plateName;
+    double platePrice;
+    String imageLink;
+    String plateInformation;
 
-public Plate(){
-    this.plateName=plateName;
-    this.platePrice=platePrice;
-    this.imageLink=imageLink;
-    this.plateInformation=plateInformation;
-}
+    public Plate() {
+        this.plateName = plateName;
+        this.platePrice = platePrice;
+        this.imageLink = imageLink;
+        this.plateInformation = plateInformation;
+    }
 
     public String getPlateName() {
         return plateName;

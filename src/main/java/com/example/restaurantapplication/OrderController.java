@@ -263,9 +263,9 @@ public class OrderController implements Initializable {
 
         String current = String.format(Locale.US, "%.2f", currentTotal);
         TotalPrice.setText(current);
-
     }
-    public void handleCancelOrderButton(ActionEvent e){
-        TotalPrice.setText("0");
+
+    public void handleCancelOrderButton(ActionEvent e) {
+        TotalPrice.setText("0.00");
     }
 }

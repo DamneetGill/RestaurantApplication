@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="675.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.login.LoggedInController">
+<AnchorPane prefHeight="675.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.LoggedInController">
    <children>
       <Region layoutX="30.0" layoutY="30.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
       <Region layoutX="20.0" layoutY="35.0" prefHeight="1086.0" prefWidth="8.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="40.0" />
       <Region layoutX="223.0" layoutY="72.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <BorderPane layoutX="200.0" layoutY="247.0" prefHeight="675.0" prefWidth="1109.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="chosen-dish-card" stylesheets="@../values/style.css" BorderPane.alignment="CENTER">
+            <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="chosen-dish-card" stylesheets="@values/style.css" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER" prefHeight="282.0" prefWidth="400.0">
                      <children>
@@ -37,10 +37,21 @@
                   </HBox>
                   <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="340.0" prefHeight="237.0" prefWidth="400.0">
                      <children>
-                        <Button fx:id="button_log_out" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" styleClass="shadow" stylesheets="@../values/style.css" text="Logout">
+                        <Button fx:id="button_log_out" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Logout">
                            <font>
                               <Font name="Cambria" size="18.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="button_continue" layoutX="160.0" layoutY="58.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Continue">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
                         </Button>
                      </children>
                      <VBox.margin>

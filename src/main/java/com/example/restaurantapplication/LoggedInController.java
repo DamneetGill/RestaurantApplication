@@ -1,4 +1,4 @@
-package com.example.restaurantapplication.login;
+package com.example.restaurantapplication;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,16 +14,26 @@ public class LoggedInController implements Initializable {
 
     @FXML
     private Button button_log_out;
+    @FXML
+    private Button button_continue;
 
     @FXML
     private Label label_welcome;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         button_log_out.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "sample.fxml", "Log in!", null);
+                DBUtils.changeScene(event, "sample.fxml", "Log in now at \"Casa Mia Restaurant\"", null);
+            }
+        });
+
+        button_continue.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "order-overview.fxml", "Order now at \"Casa Mia Restaurant\"", null);
             }
         });
     }
