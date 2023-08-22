@@ -32,8 +32,13 @@ public class HomeController {
     }
 
     @FXML
-    public void handleReservation(ActionEvent event) {
-
+    public void handleReservation(ActionEvent event) throws Exception {
+        Stage login = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("reservation-overview.fxml"));
+        Scene scene = new Scene(root);
+        login.setScene(scene);
+        login.setTitle("Make your reservation");
+        login.show();
     }
 
 }

@@ -49,7 +49,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="ReservationButton" layoutX="327.0" layoutY="552.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #eb680c; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Make Reservation" textFill="WHITE">
+      <Button fx:id="ReservationButton" layoutX="327.0" layoutY="552.0" mnemonicParsing="false" onAction="#handleReservation" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #eb680c; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Make Reservation" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>

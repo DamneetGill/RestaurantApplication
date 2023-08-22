@@ -24,7 +24,7 @@ public class LogInController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-     System.out.println("0");
+
         button_log_in.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle (ActionEvent event){
