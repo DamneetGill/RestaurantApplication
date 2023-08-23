@@ -23,7 +23,7 @@
       </ImageView>
       <ImageView fitHeight="328.0" fitWidth="247.0" layoutX="647.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/home_3.jpg" />
+            <Image url="@img/home_3.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="282.0" fitWidth="256.0" layoutX="879.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
@@ -57,8 +57,8 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Region layoutX="40.0" layoutY="40.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Region layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="8.0" prefWidth="618.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="471.0" />
       <Region layoutX="30.0" layoutY="45.0" prefHeight="1086.0" prefWidth="8.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="40.0" />
-      <Region layoutX="233.0" layoutY="82.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Region layoutX="20.0" layoutY="19.0" prefHeight="8.0" prefWidth="844.0" style="-fx-background-color: #eb680c;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="245.0" AnchorPane.topAnchor="19.0" />
    </children>
 </AnchorPane>

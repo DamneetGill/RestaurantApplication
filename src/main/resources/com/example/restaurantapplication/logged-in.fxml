@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="675.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.LoggedInController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1109.0" style="-fx-background-image: img\loggedin_image.jpg;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.LoggedInController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
    <children>
-      <Region layoutX="30.0" layoutY="30.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-      <Region layoutX="20.0" layoutY="35.0" prefHeight="1086.0" prefWidth="8.0" style="-fx-background-color: #eb680c;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="40.0" />
-      <Region layoutX="223.0" layoutY="72.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <BorderPane layoutX="200.0" layoutY="247.0" prefHeight="675.0" prefWidth="1109.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="694.0" fitWidth="1127.0" layoutX="-1.0" layoutY="-9.0" opacity="0.87" pickOnBounds="true">
+         <image>
+            <Image url="@img/background.png" />
+         </image>
+      </ImageView>
+      <BorderPane layoutX="-10.0" layoutY="-1.0" prefHeight="686.0" prefWidth="1127.0" style="-fx-background-image: https://img.freepik.com/free-vector/watercolor-orange-yellow-background_23-2149505752.jpg;" styleClass="anchor-image" stylesheets="@values/style.css">
          <center>
-            <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="chosen-dish-card" stylesheets="@values/style.css" BorderPane.alignment="CENTER">
+            <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #f9f8f4;" stylesheets="@values/style.css" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER" prefHeight="282.0" prefWidth="400.0">
                      <children>
                         <Label fx:id="label_welcome" alignment="CENTER" prefHeight="279.0" prefWidth="462.0" text="Welcome!">
                            <font>
-                              <Font name="Cambria Bold" size="48.0" />
+                              <Font name="Cambria Bold" size="52.0" />
                            </font>
                            <HBox.margin>
                               <Insets />
@@ -37,21 +44,27 @@
                   </HBox>
                   <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="340.0" prefHeight="237.0" prefWidth="400.0">
                      <children>
-                        <Button fx:id="button_log_out" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Logout">
+                        <Button fx:id="button_log_out" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Logout">
                            <font>
                               <Font name="Cambria" size="18.0" />
                            </font>
                            <HBox.margin>
                               <Insets right="20.0" />
                            </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
-                        <Button fx:id="button_continue" layoutX="160.0" layoutY="58.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Continue">
+                        <Button fx:id="button_continue" layoutX="160.0" layoutY="58.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Continue">
                            <font>
                               <Font name="Cambria" size="18.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                      </children>
                      <VBox.margin>
@@ -62,11 +75,12 @@
                      </padding>
                   </HBox>
                </children>
+               <styleClass>
+                  <String fx:value="chosen-dish-card" />
+                  <String fx:value="welcome" />
+               </styleClass>
             </VBox>
          </center>
       </BorderPane>
    </children>
-   <cursor>
-      <Cursor fx:constant="DEFAULT" />
-   </cursor>
 </AnchorPane>
