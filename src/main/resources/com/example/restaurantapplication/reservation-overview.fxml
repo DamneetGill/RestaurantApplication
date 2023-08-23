@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -17,7 +18,7 @@
       <Region layoutX="223.0" layoutY="72.0" prefHeight="8.0" prefWidth="1086.0" style="-fx-background-color: #eb680c;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <BorderPane layoutX="200.0" layoutY="247.0" prefHeight="675.0" prefWidth="1109.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="chosen-dish-card" stylesheets="@values/style.css" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" stylesheets="@values/style.css" BorderPane.alignment="CENTER">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Informations">
                      <font>
@@ -27,7 +28,7 @@
                         <Insets bottom="50.0" />
                      </VBox.margin>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="To make a reservation call us on xxx-xxx-xxxx.&#10;&#10;Make sure to leave a review and enjoy yourself to the fullest." wrappingWidth="362.20004272460926">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="To make a reservation call us on xxx-xxx-xxxx.&#10;" textAlignment="CENTER" wrappingWidth="294.20004272460926">
                      <font>
                         <Font name="Constantia" size="18.0" />
                      </font>
@@ -44,6 +45,10 @@
                      </VBox.margin>
                   </Button>
                </children>
+               <styleClass>
+                  <String fx:value="chosen-dish-card" />
+                  <String fx:value="welcome" />
+               </styleClass>
             </VBox>
          </center>
       </BorderPane>

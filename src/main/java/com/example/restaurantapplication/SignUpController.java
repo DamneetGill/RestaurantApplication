@@ -21,7 +21,6 @@ public class SignUpController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ToggleGroup toggleGroup = new ToggleGroup();
 
         button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
             @Override
