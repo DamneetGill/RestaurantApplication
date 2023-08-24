@@ -42,12 +42,14 @@
     -fx-background-radius:30;
 
 }
-.anchor-image{
-     -fx-background-image: url("\com\example\restaurantapplication\img\background.avif");
-     -fx-background-size: 100% 100%;
-  }
 
 .welcome{
 -fx-background-radius:40;
+}
+
+.border-shadow{
+sha
+  box-shadow: 5px 10px;
+
 }
 
