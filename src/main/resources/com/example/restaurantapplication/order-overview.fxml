@@ -217,7 +217,7 @@
             </VBox>
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="142.0">
                <children>
-                  <Button fx:id="ConfirmButton11" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #eb680c;" styleClass="search-button" stylesheets="@values/style.css" text="CONFIRM ORDER" textFill="WHITE">
+                  <Button fx:id="button_continue" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #eb680c;" styleClass="search-button" stylesheets="@values/style.css" text="CONTINUE" textFill="WHITE">
                      <font>
                         <Font name="Cambria Bold" size="15.0" />
                      </font>

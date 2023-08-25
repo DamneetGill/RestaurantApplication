@@ -1,10 +1,14 @@
 package com.example.restaurantapplication;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -14,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,6 +56,8 @@ public class OrderController implements Initializable {
     private Button CancelOrderButton;
     @FXML
     private ScrollPane Scroll;
+    @FXML
+    private Button button_continue;
     private List<Plate> plates = new ArrayList<>();
     private MyListener myListener;
     int plateQuantity = 0;
@@ -237,6 +244,26 @@ public class OrderController implements Initializable {
                 IOException e) {
             e.printStackTrace();
         }
+
+        button_continue.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                FXMLLoader loader=new FXMLLoader(getClass().getResource("summary-overview.fxml"));
+                try {
+                    Parent root=(Parent)loader.load();
+                    SummaryController summaryController=loader.<SummaryController>getController();
+                    summaryController.setSubtotalLabel(TotalPrice.getText().toString());
+                    summaryController.setTotalLabel(TotalPrice.getText().toString());
+                    Scene scene=new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+        });
     }
 
     public void handlePlusButton(ActionEvent e) {
