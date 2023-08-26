@@ -154,57 +154,5 @@ public class DBUtils {
             }
         }
     }
-    public static void insertNewOrder (ActionEvent event, String username, String password) {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
-            preparedStatement = connection.prepareStatement("SELECT password FROM users WHERE username = ?");
-            preparedStatement.setString(1, username);
-            resultSet = preparedStatement.executeQuery();
-            if (!resultSet.isBeforeFirst()) {
-                System.out.println("User not found in the database!");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Provided credentials are incorrect!");
-                alert.show();
-            } else {
-                while (resultSet.next()) {
-                    String retrievedPassword = resultSet.getString("password");
-                    if (retrievedPassword.equals(password)) {
-                        changeScene(event, "logged-in.fxml", "Welcome!", username);
-                    } else {
-                        System.out.println("Password did not match!");
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("The provided credentials are incorrect!");
-                        alert.show();
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (resultSet != null) {
-                try {
-                    resultSet.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (preparedStatement != null) {
-                try {
-                    preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
+
 }
