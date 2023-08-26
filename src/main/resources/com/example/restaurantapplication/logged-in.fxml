@@ -29,12 +29,12 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="282.0" prefWidth="400.0">
                      <children>
-                        <Label fx:id="label_welcome" prefHeight="279.0" prefWidth="462.0" text="Welcome!">
+                        <Label fx:id="label_welcome" alignment="CENTER" prefHeight="200.0" prefWidth="350.0" text="Welcome!">
                            <font>
-                              <Font name="Cambria Bold" size="52.0" />
+                              <Font name="Cambria Bold" size="45.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="90.0" />
+                              <Insets />
                            </HBox.margin>
                         </Label>
                      </children>

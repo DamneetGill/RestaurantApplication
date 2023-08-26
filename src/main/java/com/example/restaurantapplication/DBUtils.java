@@ -22,9 +22,7 @@ public class DBUtils {
                 FXMLLoader loader = new FXMLLoader((DBUtils.class.getResource(fxmlFile)));
                 root = loader.load();
                 LoggedInController loggedInController = loader.getController();
-                loggedInController.setUsername(username);
                 loggedInController.setUserInformation(username);
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -49,7 +47,7 @@ public class DBUtils {
 
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
             psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
             psCheckUserExists.setString(1, username);
             resultSet = psCheckUserExists.executeQuery();
@@ -106,7 +104,7 @@ public class DBUtils {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
             preparedStatement = connection.prepareStatement("SELECT password FROM users WHERE username = ?");
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
@@ -154,5 +152,4 @@ public class DBUtils {
             }
         }
     }
-
 }
