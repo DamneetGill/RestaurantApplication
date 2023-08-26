@@ -43,4 +43,8 @@ public class SummaryController implements Initializable {
         String totalPrice = String.format(Locale.US, "%.2f", total);
         totalLabel.setText("€" + totalPrice);
     }
+
+    public void setUsernameLabel(String username) {
+        usernameLabel.setText("Thank you " + username);
+    }
 }

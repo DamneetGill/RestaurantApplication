@@ -61,6 +61,13 @@ public class OrderController implements Initializable {
     private List<Plate> plates = new ArrayList<>();
     private MyListener myListener;
     int plateQuantity = 0;
+    boolean firstPlate=false;
+
+    String username;
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     private List<Plate> getData() {
         List<Plate> plates = new ArrayList<>();
@@ -254,6 +261,7 @@ public class OrderController implements Initializable {
                     SummaryController summaryController=loader.<SummaryController>getController();
                     summaryController.setSubtotalLabel(TotalPrice.getText().toString());
                     summaryController.setTotalLabel(TotalPrice.getText().toString());
+                    summaryController.setUsernameLabel(username);
                     Scene scene=new Scene(root);
                     stage.setScene(scene);
                     stage.show();
@@ -280,7 +288,11 @@ public class OrderController implements Initializable {
     }
 
     public void handleAddToCartButton(ActionEvent e) {
+    if(TotalPrice.getText().matches("0")){
+        firstPlate=true;
+        //System.out.println(firstPlate);
 
+    }
         Double currentTotal = Double.parseDouble(TotalPrice.getText().toString());
         Integer quantity = Integer.parseInt(PlateQuantity.getText().toString());
         Double plateTotal = Double.parseDouble(ChosenPlatePrice.getText().toString());
