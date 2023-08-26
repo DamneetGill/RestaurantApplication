@@ -66,7 +66,6 @@ public class OrderController implements Initializable {
         List<Plate> plates = new ArrayList<>();
 
         Plate plate = new Plate();
-
         plate.setPlateName("Mushroom Bruschetta");
         plate.setPlatePrice(4.50);
         plate.setPlateInformation("Caramelized mushrooms with garlic and thyme on crispy toasted bread with an herbed ricotta spread");
