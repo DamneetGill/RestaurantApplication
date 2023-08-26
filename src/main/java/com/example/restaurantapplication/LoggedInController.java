@@ -4,11 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+
 
 public class LoggedInController implements Initializable {
 
@@ -40,7 +43,9 @@ public class LoggedInController implements Initializable {
 
     public void setUserInformation(String Username) {
         label_welcome.setText(("Welcome " + Username + "!"));
+        label_welcome.setAlignment(Pos.CENTER);
         label_welcome.setWrapText(true);
+
     }
 
 }

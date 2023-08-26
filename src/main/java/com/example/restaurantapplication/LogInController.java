@@ -36,5 +36,6 @@ public class LogInController implements Initializable {
                 DBUtils.changeScene(event, "sign-up.fxml","Sign up now at \"Casa Mia Restaurant\"", null);
             }
         });
+
     }
 }

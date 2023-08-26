@@ -23,12 +23,12 @@ public class HomeController {
 
     @FXML
     public void handleOrder(ActionEvent event) throws Exception {
-        Stage login = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene scene = new Scene(root);
-        login.setScene(scene);
-        login.setTitle("Log in now at \"Casa Mia Restaurant\"");
-        login.show();
+        stage.setScene(scene);
+        stage.setTitle("Log in now at \"Casa Mia Restaurant\"");
+        stage.show();
     }
 
     @FXML
