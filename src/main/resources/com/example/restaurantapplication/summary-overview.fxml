@@ -5,9 +5,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -58,14 +61,11 @@
                         <Insets top="39.0" />
                      </HBox.margin>
                      <children>
-                        <Label prefHeight="58.0" prefWidth="472.0" text="Your order will be shipped directly to your specified address." textFill="#666666">
+                        <TextField fx:id="tf_street" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="464.0" styleClass="transparent" stylesheets="@values/style.css">
                            <font>
-                              <Font name="Cambria Bold" size="13.0" />
+                              <Font name="Cambria Bold" size="18.0" />
                            </font>
-                           <VBox.margin>
-                              <Insets left="20.0" />
-                           </VBox.margin>
-                        </Label>
+                        </TextField>
                      </children>
                   </VBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="480.0">
@@ -73,12 +73,12 @@
                         <Insets left="-480.0" />
                      </HBox.margin>
                      <children>
-                        <Label prefHeight="57.0" prefWidth="484.0" text="Shipping Updates">
+                        <Label prefHeight="57.0" prefWidth="484.0" text="Street">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
                            <font>
-                              <Font name="Cambria Bold" size="16.0" />
+                              <Font name="Cambria" size="24.0" />
                            </font>
                         </Label>
                      </children>
@@ -92,14 +92,19 @@
                         <Insets top="39.0" />
                      </HBox.margin>
                      <children>
-                        <Label prefHeight="44.0" prefWidth="452.0" text="456 Dream AvenueFantasyville, ImaginariaIM67890Dreamland" textFill="#666666">
+                        <TextField fx:id="tf_house_number" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="127.0" style="-fx-background-radius: ;" styleClass="transparent" stylesheets="@values/style.css">
                            <font>
-                              <Font name="Cambria Bold" size="13.0" />
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tf_cap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="127.0" style="-fx-background-radius: ;" styleClass="transparent" stylesheets="@values/style.css">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="20.0" />
+                              <Insets left="340.0" top="-50.0" />
                            </VBox.margin>
-                        </Label>
+                        </TextField>
                      </children>
                   </VBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="480.0">
@@ -107,13 +112,21 @@
                         <Insets left="-480.0" />
                      </HBox.margin>
                      <children>
-                        <Label prefHeight="57.0" prefWidth="484.0" text="Address">
+                        <Label prefHeight="54.0" prefWidth="194.0" text="House Number">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
                            <font>
-                              <Font name="Cambria Bold" size="16.0" />
+                              <Font name="Cambria" size="24.0" />
                            </font>
+                        </Label>
+                        <Label prefHeight="54.0" prefWidth="127.0" text="CAP">
+                           <font>
+                              <Font name="Cambria" size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="148.0" />
+                           </HBox.margin>
                         </Label>
                      </children>
                   </HBox>
@@ -129,14 +142,11 @@
                         <Insets top="39.0" />
                      </HBox.margin>
                      <children>
-                        <Label prefHeight="44.0" prefWidth="452.0" text="The payment for the order will be made upon delivery." textFill="#666666">
+                        <TextField fx:id="tf_city" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="467.0" style="-fx-background-radius: ;" styleClass="transparent" stylesheets="@values/style.css">
                            <font>
-                              <Font name="Cambria Bold" size="13.0" />
+                              <Font name="Cambria Bold" size="18.0" />
                            </font>
-                           <VBox.margin>
-                              <Insets left="20.0" />
-                           </VBox.margin>
-                        </Label>
+                        </TextField>
                      </children>
                   </VBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="480.0">
@@ -144,12 +154,12 @@
                         <Insets left="-480.0" />
                      </HBox.margin>
                      <children>
-                        <Label prefHeight="57.0" prefWidth="484.0" text="Payment">
+                        <Label prefHeight="57.0" prefWidth="484.0" text="City">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
                            <font>
-                              <Font name="Cambria Bold" size="16.0" />
+                              <Font name="Cambria" size="24.0" />
                            </font>
                         </Label>
                      </children>
@@ -173,7 +183,7 @@
                         <Image url="@img/shop_bag.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="109.0" prefWidth="526.0" text="Your Order : #569">
+                  <Label fx:id="orderNumberLabel" prefHeight="109.0" prefWidth="526.0" text="Your Order : #569">
                      <font>
                         <Font name="Cambria Bold" size="24.0" />
                      </font>
@@ -183,13 +193,17 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="608.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
+            <ScrollPane fx:id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="608.0">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
+               <content>
+                  <GridPane fx:id="orderedGrid" prefHeight="2.0" prefWidth="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                  </GridPane>
+               </content>
             </ScrollPane>
             <HBox prefHeight="76.0" prefWidth="622.0">
                <children>
@@ -254,7 +268,7 @@
                   </Label>
                </children>
             </HBox>
-            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="42.0" prefWidth="139.0" style="-fx-background-color: #28214b;" stylesheets="@values/style.css" text="CONFIRM ORDER" textFill="WHITE">
+            <Button fx:id="button_confirm_order" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="42.0" prefWidth="139.0" style="-fx-background-color: #28214b;" stylesheets="@values/style.css" text="CONFIRM ORDER" textFill="WHITE">
                <VBox.margin>
                   <Insets left="450.0" top="25.0" />
                </VBox.margin>

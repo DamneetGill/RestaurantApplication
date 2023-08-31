@@ -48,8 +48,10 @@
 }
 
 .border-shadow{
-sha
+
   box-shadow: 5px 10px;
 
 }
-
+.textField-colorText {
+-fx-text-inner-color: #808080;
+}

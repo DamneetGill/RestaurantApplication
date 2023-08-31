@@ -7,12 +7,14 @@ public class Plate {
     double platePrice;
     String imageLink;
     String plateInformation;
+    String code;
 
     public Plate() {
         this.plateName = plateName;
         this.platePrice = platePrice;
         this.imageLink = imageLink;
         this.plateInformation = plateInformation;
+        this.code=code;
     }
 
     public String getPlateName() {
@@ -30,6 +32,7 @@ public class Plate {
     public String getPlateInformation() {
         return plateInformation;
     }
+    public String getCode(){ return code; }
 
     public void setPlateName(String plateName) {
         this.plateName = plateName;
@@ -47,4 +50,5 @@ public class Plate {
         this.plateInformation = plateInformation;
     }
 
+    public void setCode(String code) { this.code = code; }
 }

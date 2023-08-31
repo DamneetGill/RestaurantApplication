@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.stream.Stream;
 
 public class OrderController implements Initializable {
     @FXML
@@ -59,14 +60,26 @@ public class OrderController implements Initializable {
     @FXML
     private Button button_continue;
     private List<Plate> plates = new ArrayList<>();
+    List<String> orderedCodes=new ArrayList<>();
+    List<Integer> count =new ArrayList<>();
     private MyListener myListener;
     int plateQuantity = 0;
-    boolean firstPlate=false;
+    boolean firstPlate = false;
 
     String username;
+    String code;
+    int orderCode;
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setOrderCode(int orderCode) {
+        this.orderCode = orderCode;
     }
 
     private List<Plate> getData() {
@@ -77,6 +90,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(4.50);
         plate.setPlateInformation("Caramelized mushrooms with garlic and thyme on crispy toasted bread with an herbed ricotta spread");
         plate.setImageLink("/com/example/restaurantapplication/img/mushroom_bruschetta.png");
+        plate.setCode("1a");
         plates.add(plate);
 
         plate = new Plate();
@@ -84,6 +98,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(3.50);
         plate.setPlateInformation("Juicy bites of ricotta flavored with slightly tangy Pecorino cheese and fresh parsley");
         plate.setImageLink("/com/example/restaurantapplication/img/ricotta_cheese_balls.png");
+        plate.setCode("1b");
         plates.add(plate);
 
         plate = new Plate();
@@ -91,6 +106,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(3.50);
         plate.setPlateInformation("Baskets of potatoes stuffed with scamorza cheese and mushrooms");
         plate.setImageLink("/com/example/restaurantapplication/img/potato_mushroom.png");
+        plate.setCode("1c");
         plates.add(plate);
 
         plate = new Plate();
@@ -98,6 +114,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(3.50);
         plate.setPlateInformation("Baskets of bread, filled with ricotta and roasted apple ");
         plate.setImageLink("/com/example/restaurantapplication/img/ricotta_mela.png");
+        plate.setCode("1d");
         plates.add(plate);
 
         plate = new Plate();
@@ -105,6 +122,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(12.99);
         plate.setPlateInformation("Risotto with Parmesan cheese, white wine and mushrooms");
         plate.setImageLink("/com/example/restaurantapplication/img/mushroom_risotto.png");
+        plate.setCode("2a");
         plates.add(plate);
 
         plate = new Plate();
@@ -112,6 +130,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(9.50);
         plate.setPlateInformation("Simple spaghetti with cherry tomatoes and roe");
         plate.setImageLink("/com/example/restaurantapplication/img/spaghetti.png");
+        plate.setCode("2b");
         plates.add(plate);
 
 
@@ -120,6 +139,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(11.50);
         plate.setPlateInformation("Homemade potato gnocchi tossed in a simple tomato sauce");
         plate.setImageLink("/com/example/restaurantapplication/img/gnocchi.png");
+        plate.setCode("2c");
         plates.add(plate);
 
 
@@ -128,6 +148,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(10.50);
         plate.setPlateInformation("Creamy pesto rigatoni with chili garlic breadcrumbs");
         plate.setImageLink("/com/example/restaurantapplication/img/pesto_pasta.png");
+        plate.setCode("2d");
         plates.add(plate);
 
 
@@ -136,6 +157,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(13.50);
         plate.setPlateInformation("Garlic lamb chops flavored with rosemary accompanied with a red wine sauce");
         plate.setImageLink("/com/example/restaurantapplication/img/lamb.png");
+        plate.setCode("3a");
         plates.add(plate);
 
 
@@ -144,6 +166,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(8.50);
         plate.setPlateInformation("Thinly sliced eggplant rolled up with ricotta cheese and an herb filling ");
         plate.setImageLink("/com/example/restaurantapplication/img/rolls.png");
+        plate.setCode("3b");
         plates.add(plate);
 
         plate = new Plate();
@@ -151,6 +174,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(14.50);
         plate.setPlateInformation("Pan-seared steak with garlic butter and accompanied with mashed potatoes, broccoli and mushrooms");
         plate.setImageLink("/com/example/restaurantapplication/img/steak_with_mushroom.png");
+        plate.setCode("3c");
         plates.add(plate);
 
         plate = new Plate();
@@ -158,6 +182,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(12.50);
         plate.setPlateInformation("Veal scallopini served with a mushroom sauce");
         plate.setImageLink("/com/example/restaurantapplication/img/scalloppina.png");
+        plate.setCode("3d");
         plates.add(plate);
 
         plate = new Plate();
@@ -165,6 +190,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(4.50);
         plate.setPlateInformation("Espresso-dipped ladyfingers and a creamy lightly sweetened mascarpone cream");
         plate.setImageLink("/com/example/restaurantapplication/img/tiramisu.png");
+        plate.setCode("4a");
         plates.add(plate);
 
         plate = new Plate();
@@ -172,6 +198,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(4.50);
         plate.setPlateInformation("Layers of sponge cake dipped in Alchermes liqueur altered with pastry cream and blueberries");
         plate.setImageLink("/com/example/restaurantapplication/img/italian_trifle.png");
+        plate.setCode("4b");
         plates.add(plate);
 
 
@@ -180,6 +207,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(4.50);
         plate.setPlateInformation("Blueberry pie with warm spices, lemon and a lattice crust");
         plate.setImageLink("/com/example/restaurantapplication/img/blueberry_pie.png");
+        plate.setCode("4c");
         plates.add(plate);
 
 
@@ -188,6 +216,7 @@ public class OrderController implements Initializable {
         plate.setPlatePrice(2.50);
         plate.setPlateInformation("Lemon rosemary sorbet");
         plate.setImageLink("/com/example/restaurantapplication/img/lemon_sorbet.png");
+        plate.setCode("4d");
         plates.add(plate);
         return plates;
     }
@@ -199,10 +228,12 @@ public class OrderController implements Initializable {
         Image image = new Image(plate.getImageLink());
         image = new Image(getClass().getResourceAsStream(plate.getImageLink()));
         ChosenPlateImage.setImage(image);
+        setCode(plate.getCode());
         ChosenPlateInfo.setText(plate.getPlateInformation());
         ChosenPlateInfo.setWrapText(true);
         plateQuantity = 0;
         PlateQuantity.setText(Integer.toString(0));
+
     }
 
 
@@ -254,15 +285,19 @@ public class OrderController implements Initializable {
         button_continue.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                FXMLLoader loader=new FXMLLoader(getClass().getResource("summary-overview.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("summary-overview.fxml"));
                 try {
-                    Parent root=(Parent)loader.load();
-                    SummaryController summaryController=loader.<SummaryController>getController();
+                    Parent root = (Parent) loader.load();
+                    SummaryController summaryController = loader.<SummaryController>getController();
+                    summaryController.setOrderedGrid(orderedCodes,plates,count);
                     summaryController.setSubtotalLabel(TotalPrice.getText().toString());
                     summaryController.setTotalLabel(TotalPrice.getText().toString());
                     summaryController.setUsernameLabel(username);
-                    Scene scene=new Scene(root);
+                    summaryController.setUsername(username);
+                    summaryController.setOrderNumberLabel(orderCode);
+                    Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
                 } catch (IOException e) {
@@ -288,22 +323,27 @@ public class OrderController implements Initializable {
     }
 
     public void handleAddToCartButton(ActionEvent e) {
-    if(TotalPrice.getText().matches("0")){
-        firstPlate=true;
-        //System.out.println(firstPlate);
+        if (TotalPrice.getText().matches("0.00")) {
+            firstPlate = true;
+            setOrderCode(DBUtils.newOrder(e, username));
 
-    }
+        }
+
         Double currentTotal = Double.parseDouble(TotalPrice.getText().toString());
         Integer quantity = Integer.parseInt(PlateQuantity.getText().toString());
         Double plateTotal = Double.parseDouble(ChosenPlatePrice.getText().toString());
         plateTotal *= quantity;
         currentTotal += plateTotal;
-
         String current = String.format(Locale.US, "%.2f", currentTotal);
         TotalPrice.setText(current);
+        orderedCodes.add(code);
+        count.add(quantity);
+
+        DBUtils.addToOrder(e,code,orderCode,quantity);
     }
 
     public void handleCancelOrderButton(ActionEvent e) {
         TotalPrice.setText("0.00");
+        DBUtils.cancelOrder(e,orderCode);
     }
 }

@@ -190,7 +190,7 @@
                   <Insets left="45.0" />
                </VBox.margin>
                <children>
-                  <Label fx:id="TotalPrice" prefHeight="46.0" prefWidth="170.0" text="0" textFill="#084a69">
+                  <Label fx:id="TotalPrice" prefHeight="46.0" prefWidth="170.0" text="0.00" textFill="#084a69">
                      <font>
                         <Font name="Cambria Bold" size="31.0" />
                      </font>

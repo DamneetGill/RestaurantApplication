@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0" prefWidth="564.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantapplication.BaseSummaryController">
+   <children>
+      <ImageView fx:id="orderedImageView" fitHeight="126.0" fitWidth="89.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/blueberry_pie.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="orderedNameLabel" layoutX="156.0" layoutY="14.0" prefHeight="22.0" prefWidth="324.0" text="Blueberry Pie">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" layoutX="156.0" layoutY="78.0" stroke="#3e3939" strokeType="INSIDE" width="43.0" />
+      <Label fx:id="orderedQuantityLabel" alignment="CENTER" layoutX="145.0" layoutY="78.0" prefHeight="30.0" prefWidth="63.0" text="x 1">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="orderedPriceLabel" alignment="CENTER" layoutX="451.0" layoutY="78.0" prefHeight="30.0" prefWidth="98.0" text="€ 4.50">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
