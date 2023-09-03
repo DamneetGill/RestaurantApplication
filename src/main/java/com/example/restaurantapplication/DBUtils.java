@@ -48,7 +48,7 @@ public class DBUtils {
 
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
             psCheckUserExists.setString(1, username);
             resultSet = psCheckUserExists.executeQuery();
@@ -105,7 +105,7 @@ public class DBUtils {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             preparedStatement = connection.prepareStatement("SELECT password FROM users WHERE username = ?");
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
@@ -158,10 +158,12 @@ public class DBUtils {
         boolean verify = true;
         Connection connection = null;
         PreparedStatement psInsert = null;
-
+        ResultSet resultSet=null;
+        int user_id=0;
+        int order_cod=0;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             if (cap.isEmpty() || cap.length() != 5 || cap.matches("^[0-9]*$") == false) {
                 System.out.println("Incorrect CAP");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -192,16 +194,30 @@ public class DBUtils {
             }
 
             if (verify) {
-                psInsert = connection.prepareStatement("INSERT into addresses(user_id) select user_id from users where username=?");
+
+                psInsert = connection.prepareStatement("select user_id from users where username=?");
                 psInsert.setString(1, username);
-                psInsert = connection.prepareStatement("INSERT into addresses(order_cod) select max(order_cod) from orders join users on (users.user_id=orders.user_id) where username = ?");
+                resultSet=psInsert.executeQuery();
+                if(resultSet.next()){
+                    user_id=resultSet.getInt(1);
+                    System.out.println(user_id);
+                }
+
+                psInsert = connection.prepareStatement("select max(order_cod) from orders join users on (users.user_id=orders.user_id) where username = ?");
                 psInsert.setString(1, username);
-                psInsert = connection.prepareStatement("INSERT INTO addresses (street, home_number, cap, city) VALUES (?, ?, ?, ?)");
+                resultSet= psInsert.executeQuery();
+                if(resultSet.next()){
+                    order_cod=resultSet.getInt(1);
+                }
+
+                psInsert = connection.prepareStatement("INSERT INTO addresses (street, home_number, cap, city, user_id, order_cod,username) VALUES (?, ?, ?, ?,?,?,?)");
                 psInsert.setString(1, street);
                 psInsert.setString(2, houseNumber);
                 psInsert.setString(3, cap);
                 psInsert.setString(4, city);
-
+                psInsert.setInt(5, user_id);
+                psInsert.setInt(6, order_cod);
+                psInsert.setString(7, username);
 
 
                 psInsert.executeUpdate();
@@ -209,6 +225,7 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+
         }
     }
 
@@ -219,7 +236,7 @@ public class DBUtils {
         ResultSet result = null;
         int orderCode = 0;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             psInsert = connection.prepareStatement("insert orders (user_id) select user_id from users where username=?");
             psInsert.setString(1, username);
             psInsert.executeUpdate();
@@ -244,7 +261,7 @@ public class DBUtils {
 
         try {
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             psInsert = connection.prepareStatement("update orders set " + code + "=" + code + " + ? where order_cod = ? ");
             psInsert.setInt(1, quantity);
             psInsert.setInt(2, orderCode);
@@ -261,7 +278,7 @@ public class DBUtils {
 
         try {
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "narinderjit_1969");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             psInsert = connection.prepareStatement("delete from orders where order_cod = ? ");
             psInsert.setInt(1, orderCode);
             psInsert.executeUpdate();

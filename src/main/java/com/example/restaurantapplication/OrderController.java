@@ -296,6 +296,7 @@ public class OrderController implements Initializable {
                     summaryController.setTotalLabel(TotalPrice.getText().toString());
                     summaryController.setUsernameLabel(username);
                     summaryController.setUsername(username);
+                    summaryController.setOrderNumber(orderCode);
                     summaryController.setOrderNumberLabel(orderCode);
                     Scene scene = new Scene(root);
                     stage.setScene(scene);

@@ -51,17 +51,20 @@ public class SummaryController implements Initializable {
     private ScrollPane scrollPane;
 
     String username;
+    int orderCode;
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setOrderedGrid(List<String> orderedCodes, List<Plate> plates, List<Integer> count){
+    public void setOrderNumber(int orderCode) {
+        this.orderCode = orderCode;
+    }
+
+    public void setOrderedGrid(List<String> orderedCodes, List<Plate> plates, List<Integer> count) {
         int column = 0;
         int row = 1;
         try {
-            System.out.println(plates.size());
-            System.out.println(orderedCodes.size());
             for (int i = 0; i < plates.size(); i++) {
                 for (int j = 0; j < orderedCodes.size(); j++) {
                     if (plates.get(i).getCode().matches(orderedCodes.get(j))) {
@@ -69,14 +72,14 @@ public class SummaryController implements Initializable {
                         fxmlLoader.setLocation(getClass().getResource("base-summary-overview.fxml"));
                         AnchorPane anchorPane = fxmlLoader.load();
                         BaseSummaryController baseSummaryController = fxmlLoader.getController();
-                        baseSummaryController.setOrderedData(plates.get(i),count.get(j));
+                        baseSummaryController.setOrderedData(plates.get(i), count.get(j));
 
-                        if(column==1){
-                            column=0;
+                        if (column == 1) {
+                            column = 0;
                             row++;
                         }
                         column++;
-                        orderedGrid.add(anchorPane,column,row);
+                        orderedGrid.add(anchorPane, column, row);
                         //set grid width
                         orderedGrid.setMinWidth(Region.USE_PREF_SIZE);
                         orderedGrid.setPrefWidth(Region.USE_PREF_SIZE);
@@ -95,12 +98,15 @@ public class SummaryController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         button_cancel_order.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "order-overview.fxml", "Order now at \"Casa Mia Restaurant\"", null);
+                DBUtils.cancelOrder(event,orderCode);
+                DBUtils.changeScene(event, "home-overview.fxml", "Order now at \"Casa Mia Restaurant\"", null);
+
             }
         });
         button_confirm_order.setOnAction(new EventHandler<ActionEvent>() {
