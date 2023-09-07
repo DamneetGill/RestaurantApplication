@@ -22,50 +22,57 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
-import java.util.stream.Stream;
+import java.util.*;
 
 public class OrderController implements Initializable {
     @FXML
-    private VBox ChosenPlate;
+    private Button button_add_to_cart;
 
     @FXML
-    private ImageView ChosenPlateImage;
+    private Button button_cancel_order;
 
-    @FXML
-    private Label ChosenPlateInfo;
-
-    @FXML
-    private Label ChosenPlateName;
-
-    @FXML
-    private Label ChosenPlatePrice;
-    @FXML
-    private GridPane Grid;
-    @FXML
-    private Button MinusButton;
-    @FXML
-    private Label PlateQuantity;
-    @FXML
-    private Button PlusButton;
-    @FXML
-    private Label TotalPrice;
-    @FXML
-    private Button CancelOrderButton;
-    @FXML
-    private ScrollPane Scroll;
     @FXML
     private Button button_continue;
+
+    @FXML
+    private Button button_minus;
+
+    @FXML
+    private Button button_plus;
+
+    @FXML
+    private GridPane grid;
+
+    @FXML
+    private ImageView img_chosen_plate;
+
+    @FXML
+    private Label label_chosen_plate_info;
+
+    @FXML
+    private Label label_chosen_plate_name;
+
+    @FXML
+    private Label label_chosen_plate_price;
+
+    @FXML
+    private Label label_plate_quantity;
+
+    @FXML
+    private Label label_total_price;
+
+    @FXML
+    private ScrollPane scroll;
+
+    @FXML
+    private VBox vbox_chosen_plate;
+
     private List<Plate> plates = new ArrayList<>();
-    List<String> orderedCodes=new ArrayList<>();
-    List<Integer> count =new ArrayList<>();
+    List<String> orderedCodes = new ArrayList<>();
+    List<Integer> count = new ArrayList<>();
     private MyListener myListener;
     int plateQuantity = 0;
     boolean firstPlate = false;
-
     String username;
     String code;
     int orderCode;
@@ -133,7 +140,6 @@ public class OrderController implements Initializable {
         plate.setCode("2b");
         plates.add(plate);
 
-
         plate = new Plate();
         plate.setPlateName("Gnocchi");
         plate.setPlatePrice(11.50);
@@ -141,7 +147,6 @@ public class OrderController implements Initializable {
         plate.setImageLink("/com/example/restaurantapplication/img/gnocchi.png");
         plate.setCode("2c");
         plates.add(plate);
-
 
         plate = new Plate();
         plate.setPlateName("Rigatoni With Pesto");
@@ -151,7 +156,6 @@ public class OrderController implements Initializable {
         plate.setCode("2d");
         plates.add(plate);
 
-
         plate = new Plate();
         plate.setPlateName("Lamb");
         plate.setPlatePrice(13.50);
@@ -159,7 +163,6 @@ public class OrderController implements Initializable {
         plate.setImageLink("/com/example/restaurantapplication/img/lamb.png");
         plate.setCode("3a");
         plates.add(plate);
-
 
         plate = new Plate();
         plate.setPlateName("Eggplant Rolls");
@@ -201,7 +204,6 @@ public class OrderController implements Initializable {
         plate.setCode("4b");
         plates.add(plate);
 
-
         plate = new Plate();
         plate.setPlateName("Blueberry Pie");
         plate.setPlatePrice(4.50);
@@ -209,7 +211,6 @@ public class OrderController implements Initializable {
         plate.setImageLink("/com/example/restaurantapplication/img/blueberry_pie.png");
         plate.setCode("4c");
         plates.add(plate);
-
 
         plate = new Plate();
         plate.setPlateName("Lemon Sorbet");
@@ -222,20 +223,18 @@ public class OrderController implements Initializable {
     }
 
     private void setChosenPlate(Plate plate) {
-        ChosenPlateName.setText(plate.getPlateName());
+        label_chosen_plate_name.setText(plate.getPlateName());
         String price = String.format(Locale.US, "%.2f", plate.getPlatePrice());
-        ChosenPlatePrice.setText(price);
+        label_chosen_plate_price.setText(price);
         Image image = new Image(plate.getImageLink());
-        image = new Image(getClass().getResourceAsStream(plate.getImageLink()));
-        ChosenPlateImage.setImage(image);
+        image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(plate.getImageLink())));
+        img_chosen_plate.setImage(image);
         setCode(plate.getCode());
-        ChosenPlateInfo.setText(plate.getPlateInformation());
-        ChosenPlateInfo.setWrapText(true);
+        label_chosen_plate_info.setText(plate.getPlateInformation());
+        label_chosen_plate_info.setWrapText(true);
         plateQuantity = 0;
-        PlateQuantity.setText(Integer.toString(0));
-
+        label_plate_quantity.setText(Integer.toString(0));
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -250,6 +249,7 @@ public class OrderController implements Initializable {
 
         int column = 0;
         int row = 1;
+
         try {
             for (int i = 0; i < plates.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -264,16 +264,16 @@ public class OrderController implements Initializable {
                     row++;
                 }
                 column++;
-                Grid.add(anchorPane, column, row); //(child,column,row)
+                grid.add(anchorPane, column, row); //(child,column,row)
                 //set grid width
-                Grid.setMinWidth(Region.USE_PREF_SIZE);
-                Grid.setPrefWidth(Region.USE_PREF_SIZE);
-                Grid.setMaxWidth(Region.USE_PREF_SIZE);
+                grid.setMinWidth(Region.USE_PREF_SIZE);
+                grid.setPrefWidth(Region.USE_PREF_SIZE);
+                grid.setMaxWidth(Region.USE_PREF_SIZE);
 
                 //set grid height
-                Grid.setMinHeight(Region.USE_COMPUTED_SIZE);
-                Grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                Grid.setMaxHeight(Region.USE_PREF_SIZE);
+                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                grid.setMaxHeight(Region.USE_PREF_SIZE);
 
                 GridPane.setMargin(anchorPane, new Insets(10));
             }
@@ -285,15 +285,15 @@ public class OrderController implements Initializable {
         button_continue.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("summary-overview.fxml"));
+
                 try {
                     Parent root = (Parent) loader.load();
                     SummaryController summaryController = loader.<SummaryController>getController();
-                    summaryController.setOrderedGrid(orderedCodes,plates,count);
-                    summaryController.setSubtotalLabel(TotalPrice.getText().toString());
-                    summaryController.setTotalLabel(TotalPrice.getText().toString());
+                    summaryController.setOrderedGrid(orderedCodes, plates, count);
+                    summaryController.setSubtotalLabel(label_total_price.getText().toString());
+                    summaryController.setTotalLabel(label_total_price.getText().toString());
                     summaryController.setUsernameLabel(username);
                     summaryController.setUsername(username);
                     summaryController.setOrderNumber(orderCode);
@@ -304,7 +304,6 @@ public class OrderController implements Initializable {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-
             }
         });
     }
@@ -312,39 +311,38 @@ public class OrderController implements Initializable {
     public void handlePlusButton(ActionEvent e) {
         if (plateQuantity < 9) {
             plateQuantity++;
-            PlateQuantity.setText(Integer.toString(plateQuantity));
+            label_plate_quantity.setText(Integer.toString(plateQuantity));
         }
     }
 
     public void handleMinusButton(ActionEvent e) {
         if (plateQuantity > 0) {
             plateQuantity--;
-            PlateQuantity.setText(Integer.toString(plateQuantity));
+            label_plate_quantity.setText(Integer.toString(plateQuantity));
         }
     }
 
     public void handleAddToCartButton(ActionEvent e) {
-        if (TotalPrice.getText().matches("0.00")) {
+        if (label_total_price.getText().matches("0.00")) {
             firstPlate = true;
             setOrderCode(DBUtils.newOrder(e, username));
-
         }
 
-        Double currentTotal = Double.parseDouble(TotalPrice.getText().toString());
-        Integer quantity = Integer.parseInt(PlateQuantity.getText().toString());
-        Double plateTotal = Double.parseDouble(ChosenPlatePrice.getText().toString());
+        Double currentTotal = Double.parseDouble(label_total_price.getText().toString());
+        Integer quantity = Integer.parseInt(label_plate_quantity.getText().toString());
+        Double plateTotal = Double.parseDouble(label_chosen_plate_price.getText().toString());
         plateTotal *= quantity;
         currentTotal += plateTotal;
         String current = String.format(Locale.US, "%.2f", currentTotal);
-        TotalPrice.setText(current);
+        label_total_price.setText(current);
         orderedCodes.add(code);
         count.add(quantity);
 
-        DBUtils.addToOrder(e,code,orderCode,quantity);
+        DBUtils.addToOrder(e, code, orderCode, quantity);
     }
 
     public void handleCancelOrderButton(ActionEvent e) {
-        TotalPrice.setText("0.00");
-        DBUtils.cancelOrder(e,orderCode);
+        label_total_price.setText("0.00");
+        DBUtils.cancelOrder(e, orderCode);
     }
 }

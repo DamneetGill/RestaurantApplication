@@ -41,7 +41,7 @@
                         <Insets left="20.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label fx:id="usernameLabel" prefHeight="75.0" prefWidth="422.0" text="Thank you Joe!">
+                  <Label fx:id="label_username" prefHeight="75.0" prefWidth="422.0" text="Thank you Joe!">
                      <font>
                         <Font name="Cambria Bold" size="23.0" />
                      </font>
@@ -183,7 +183,7 @@
                         <Image url="@img/shop_bag.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="orderNumberLabel" prefHeight="109.0" prefWidth="526.0" text="Your Order : #569">
+                  <Label fx:id="label_order_number" prefHeight="109.0" prefWidth="526.0" text="Your Order : #569">
                      <font>
                         <Font name="Cambria Bold" size="24.0" />
                      </font>
@@ -193,12 +193,12 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane fx:id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="608.0">
+            <ScrollPane fx:id="scroll_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="608.0">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
                <content>
-                  <GridPane fx:id="orderedGrid" prefHeight="2.0" prefWidth="10.0">
+                  <GridPane fx:id="grid_ordered" prefHeight="2.0" prefWidth="10.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -215,7 +215,7 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Label>
-                  <Label fx:id="subtotalLabel" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="393.0" text="€ 13.99">
+                  <Label fx:id="label_subtotal" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="393.0" text="€ 13.99">
                      <font>
                         <Font name="Cambria Bold" size="19.0" />
                      </font>
@@ -258,7 +258,7 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Label>
-                  <Label fx:id="totalLabel" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="393.0" text="€ 16.98">
+                  <Label fx:id="label_total" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="393.0" text="€ 16.98">
                      <font>
                         <Font name="Cambria Bold" size="19.0" />
                      </font>

@@ -25,7 +25,7 @@ public class Address implements Initializable {
     private TextField tf_street;
 
     @FXML
-    private TextField tf_home_number;
+    private TextField tf_house_number;
 
     @FXML
     private TextField tf_city;
@@ -47,7 +47,7 @@ public class Address implements Initializable {
 
             @Override
             public void handle(ActionEvent event) {
-                if (!tf_street.getText().trim().isEmpty() && !tf_cap.getText().trim().isEmpty() && !tf_city.getText().trim().isEmpty() && !tf_home_number.getText().trim().isEmpty()) {
+                if (!tf_street.getText().trim().isEmpty() && !tf_cap.getText().trim().isEmpty() && !tf_city.getText().trim().isEmpty() && !tf_house_number.getText().trim().isEmpty()) {
                     DBUtils.changeScene(event, "summary-overview.fxml", "Checkout", null);
                 } else {
                     System.out.println("Please fill in all information");

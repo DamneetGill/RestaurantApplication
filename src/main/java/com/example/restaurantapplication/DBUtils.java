@@ -6,18 +6,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.Objects;
 
 public class DBUtils {
     public static void changeScene(ActionEvent event, String fxmlFile, String title, String username) {
         Parent root = null;
 
         if (username != null) {
-
             try {
                 FXMLLoader loader = new FXMLLoader((DBUtils.class.getResource(fxmlFile)));
                 root = loader.load();
@@ -29,14 +28,14 @@ public class DBUtils {
             }
         } else {
             try {
-                root = FXMLLoader.load(DBUtils.class.getResource(fxmlFile));
+                root = FXMLLoader.load(Objects.requireNonNull(DBUtils.class.getResource(fxmlFile)));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle(title);
-        stage.setScene(new Scene(root));
+        stage.setScene(new Scene(Objects.requireNonNull(root)));
         stage.show();
     }
 
@@ -45,7 +44,6 @@ public class DBUtils {
         PreparedStatement psInsert = null;
         PreparedStatement psCheckUserExists = null;
         ResultSet resultSet = null;
-
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
@@ -64,7 +62,7 @@ public class DBUtils {
                 psInsert.setString(2, password);
                 psInsert.executeUpdate();
 
-                changeScene(event, "sample.fxml", "Welcome!", username);
+                changeScene(event, "log-in-overview.fxml", "Welcome!", username);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,11 +102,13 @@ public class DBUtils {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
+
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             preparedStatement = connection.prepareStatement("SELECT password FROM users WHERE username = ?");
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
+
             if (!resultSet.isBeforeFirst()) {
                 System.out.println("User not found in the database!");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -190,7 +190,6 @@ public class DBUtils {
                 verify = false;
             } else {
                 if (verify) {
-
                     psInsert = connection.prepareStatement("select user_id from users where username=?");
                     psInsert.setString(1, username);
                     resultSet = psInsert.executeQuery();
@@ -215,14 +214,12 @@ public class DBUtils {
                     psInsert.setInt(6, order_cod);
                     psInsert.setString(7, username);
 
-
                     psInsert.executeUpdate();
                     DBUtils.changeScene(event, "confirmation-overview.fxml", "Order Confirmation", null);
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-
         }
     }
 
@@ -232,6 +229,7 @@ public class DBUtils {
         PreparedStatement preparedStatement = null;
         ResultSet result = null;
         int orderCode = 0;
+
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             psInsert = connection.prepareStatement("insert orders (user_id) select user_id from users where username=?");
@@ -246,7 +244,6 @@ public class DBUtils {
 
             }
             return orderCode;
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -257,13 +254,11 @@ public class DBUtils {
         PreparedStatement psInsert = null;
 
         try {
-
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             psInsert = connection.prepareStatement("update orders set " + code + "=" + code + " + ? where order_cod = ? ");
             psInsert.setInt(1, quantity);
             psInsert.setInt(2, orderCode);
             psInsert.executeUpdate();
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -274,16 +269,12 @@ public class DBUtils {
         PreparedStatement psInsert = null;
 
         try {
-
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
             psInsert = connection.prepareStatement("delete from orders where order_cod = ? ");
             psInsert.setInt(1, orderCode);
             psInsert.executeUpdate();
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
-
 }

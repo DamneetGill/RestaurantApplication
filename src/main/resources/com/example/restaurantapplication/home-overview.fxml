@@ -41,7 +41,7 @@
             <Font name="Constantia" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="OrderButton" layoutX="136.0" layoutY="553.0" mnemonicParsing="false" onAction="#handleOrder" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #eb680c; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Order Now" textFill="WHITE">
+      <Button fx:id="button_order" layoutX="136.0" layoutY="553.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #eb680c; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Order Now" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>
@@ -49,7 +49,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="ReservationButton" layoutX="327.0" layoutY="552.0" mnemonicParsing="false" onAction="#handleReservation" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #eb680c; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Make Reservation" textFill="WHITE">
+      <Button fx:id="button_reservation" layoutX="327.0" layoutY="552.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #eb680c; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@values/style.css" text="Make Reservation" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>

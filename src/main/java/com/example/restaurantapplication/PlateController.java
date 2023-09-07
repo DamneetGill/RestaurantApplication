@@ -6,15 +6,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import java.util.Objects;
+
 public class PlateController {
     @FXML
-    private  Label NameLabel;
+    private ImageView img_plate;
 
     @FXML
-    private  ImageView PlateImage;
+    private Label label_name;
 
     @FXML
-    private  Label PriceLabel;
+    private Label label_price;
 
     @FXML
     private void click(MouseEvent mouseEvent) {
@@ -24,13 +26,12 @@ public class PlateController {
     private Plate plate;
     private MyListener myListener;
 
-    public  void setData(Plate plate, MyListener myListener) {
+    public void setData(Plate plate, MyListener myListener) {
         this.plate = plate;
         this.myListener = myListener;
-        NameLabel.setText(plate.getPlateName());
-        PriceLabel.setText("€" + Double.toString(plate.getPlatePrice()));
-        Image image = new Image(getClass().getResourceAsStream(plate.getImageLink()));
-        PlateImage.setImage(image);
+        label_name.setText(plate.getPlateName());
+        label_price.setText("€" + Double.toString(plate.getPlatePrice()));
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(plate.getImageLink())));
+        img_plate.setImage(image);
     }
-
 }

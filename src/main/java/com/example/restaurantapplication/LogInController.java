@@ -12,7 +12,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LogInController implements Initializable {
-
     @FXML
     private Button button_log_in;
     @FXML
@@ -26,16 +25,15 @@ public class LogInController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         button_log_in.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 DBUtils.logInUser(event, tf_username.getText(), tf_password.getText());
             }
         });
         button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
-                DBUtils.changeScene(event, "sign-up.fxml","Sign up now at \"Casa Mia Restaurant\"", null);
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "sign-up-overview.fxml", "Sign up now at \"Casa Mia Restaurant\"", null);
             }
         });
-
     }
 }

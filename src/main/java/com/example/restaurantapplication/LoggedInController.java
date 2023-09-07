@@ -17,15 +17,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-
 public class LoggedInController implements Initializable {
-
     @FXML
     private Button button_log_out;
     @FXML
     private Button button_continue;
-
     @FXML
     private Label label_welcome;
     String username;
@@ -36,29 +32,26 @@ public class LoggedInController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         button_log_out.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "sample.fxml", "Log in now at \"Casa Mia Restaurant\"", null);
+                DBUtils.changeScene(event, "log-in-overview.fxml", "Log in now at \"Casa Mia Restaurant\"", null);
             }
         });
-
         button_continue.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("order-overview.fxml"));
 
-                FXMLLoader loader=new FXMLLoader(getClass().getResource("order-overview.fxml"));
                 try {
-                    Parent root=loader.load();
-                    OrderController orderController=loader.<OrderController>getController();
+                    Parent root = loader.load();
+                    OrderController orderController = loader.<OrderController>getController();
                     orderController.setUsername(username);
-                    Scene scene=new Scene(root);
+                    Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.setTitle("Order now at \"Casa Mia Restaurant\"");
                     stage.show();
-
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -66,13 +59,9 @@ public class LoggedInController implements Initializable {
         });
     }
 
-
-
     public void setUserInformation(String username) {
         label_welcome.setText(("Welcome " + username + "!"));
         label_welcome.setAlignment(Pos.CENTER);
         label_welcome.setWrapText(true);
-
     }
-
 }

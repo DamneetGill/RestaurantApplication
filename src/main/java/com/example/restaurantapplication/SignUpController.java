@@ -21,7 +21,6 @@ public class SignUpController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -38,7 +37,7 @@ public class SignUpController implements Initializable {
         button_log_in.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "sample.fxml", "Log in now at \"Casa Mia Restaurant\"", null);
+                DBUtils.changeScene(event, "log-in-overview.fxml", "Log in now at \"Casa Mia Restaurant\"", null);
             }
         });
     }

@@ -22,6 +22,4 @@ public class ConfirmationController implements Initializable {
             }
         });
     }
-
-
 }
