@@ -158,9 +158,9 @@ public class DBUtils {
         boolean verify = true;
         Connection connection = null;
         PreparedStatement psInsert = null;
-        ResultSet resultSet=null;
-        int user_id=0;
-        int order_cod=0;
+        ResultSet resultSet = null;
+        int user_id = 0;
+        int order_cod = 0;
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
@@ -170,58 +170,55 @@ public class DBUtils {
                 alert.setContentText("CAP inserted is not correct");
                 alert.show();
                 verify = false;
-            }
-            if (street.isEmpty() || street.matches("[0-9]") == true) {
+            } else if (street.isEmpty() || street.matches("[0-9]") == true) {
                 System.out.println("Incorrect street");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Street inserted is not correct");
                 alert.show();
                 verify = false;
-            }
-            if (houseNumber.isEmpty()) {
+            } else if (houseNumber.isEmpty()) {
                 System.out.println("Incorrect house number");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("House number inserted is not correct");
                 alert.show();
                 verify = false;
-            }
-            if (city.isEmpty() || city.matches("[0-9]") == true) {
+            } else if (city.isEmpty() || city.matches("[0-9]") == true) {
                 System.out.println("Incorrect city");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("City inserted is not correct");
                 alert.show();
                 verify = false;
-            }
+            } else {
+                if (verify) {
 
-            if (verify) {
+                    psInsert = connection.prepareStatement("select user_id from users where username=?");
+                    psInsert.setString(1, username);
+                    resultSet = psInsert.executeQuery();
+                    if (resultSet.next()) {
+                        user_id = resultSet.getInt(1);
+                        System.out.println(user_id);
+                    }
 
-                psInsert = connection.prepareStatement("select user_id from users where username=?");
-                psInsert.setString(1, username);
-                resultSet=psInsert.executeQuery();
-                if(resultSet.next()){
-                    user_id=resultSet.getInt(1);
-                    System.out.println(user_id);
+                    psInsert = connection.prepareStatement("select max(order_cod) from orders join users on (users.user_id=orders.user_id) where username = ?");
+                    psInsert.setString(1, username);
+                    resultSet = psInsert.executeQuery();
+                    if (resultSet.next()) {
+                        order_cod = resultSet.getInt(1);
+                    }
+
+                    psInsert = connection.prepareStatement("INSERT INTO addresses (street, home_number, cap, city, user_id, order_cod,username) VALUES (?, ?, ?, ?,?,?,?)");
+                    psInsert.setString(1, street);
+                    psInsert.setString(2, houseNumber);
+                    psInsert.setString(3, cap);
+                    psInsert.setString(4, city);
+                    psInsert.setInt(5, user_id);
+                    psInsert.setInt(6, order_cod);
+                    psInsert.setString(7, username);
+
+
+                    psInsert.executeUpdate();
+                    DBUtils.changeScene(event, "confirmation-overview.fxml", "Order Confirmation", null);
                 }
-
-                psInsert = connection.prepareStatement("select max(order_cod) from orders join users on (users.user_id=orders.user_id) where username = ?");
-                psInsert.setString(1, username);
-                resultSet= psInsert.executeQuery();
-                if(resultSet.next()){
-                    order_cod=resultSet.getInt(1);
-                }
-
-                psInsert = connection.prepareStatement("INSERT INTO addresses (street, home_number, cap, city, user_id, order_cod,username) VALUES (?, ?, ?, ?,?,?,?)");
-                psInsert.setString(1, street);
-                psInsert.setString(2, houseNumber);
-                psInsert.setString(3, cap);
-                psInsert.setString(4, city);
-                psInsert.setInt(5, user_id);
-                psInsert.setInt(6, order_cod);
-                psInsert.setString(7, username);
-
-
-                psInsert.executeUpdate();
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -272,7 +269,7 @@ public class DBUtils {
         }
     }
 
-    public static void cancelOrder (ActionEvent event, int orderCode) {
+    public static void cancelOrder(ActionEvent event, int orderCode) {
         Connection connection = null;
         PreparedStatement psInsert = null;
 
@@ -287,8 +284,6 @@ public class DBUtils {
             throw new RuntimeException(e);
         }
     }
-
-
 
 
 }

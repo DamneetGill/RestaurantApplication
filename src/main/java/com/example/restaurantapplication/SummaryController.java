@@ -115,7 +115,7 @@ public class SummaryController implements Initializable {
             public void handle(ActionEvent event) {
                 if (!tf_street.getText().trim().isEmpty() && !tf_cap.getText().trim().isEmpty() && !tf_city.getText().trim().isEmpty() && !tf_house_number.getText().trim().isEmpty()) {
                     DBUtils.addressInfo(event, username, tf_street.getText().toString(), tf_house_number.getText().toString(), tf_cap.getText().toString(), tf_city.getText().toString());
-                    DBUtils.changeScene(event, "confirmation-overview.fxml", "Order Confirmation", null);
+
                 } else {
                     System.out.println("Please fill in all information");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
