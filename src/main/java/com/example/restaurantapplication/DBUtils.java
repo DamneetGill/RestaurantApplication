@@ -46,7 +46,7 @@ public class DBUtils {
         ResultSet resultSet = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "P0lp37744..");
             psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
             psCheckUserExists.setString(1, username);
             resultSet = psCheckUserExists.executeQuery();
@@ -104,7 +104,7 @@ public class DBUtils {
         ResultSet resultSet = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "P0lp37744..");
             preparedStatement = connection.prepareStatement("SELECT password FROM users WHERE username = ?");
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
@@ -118,7 +118,7 @@ public class DBUtils {
                 while (resultSet.next()) {
                     String retrievedPassword = resultSet.getString("password");
                     if (retrievedPassword.equals(password)) {
-                        changeScene(event, "logged-in.fxml", "Welcome!", username);
+                        changeScene(event, "logged-in-overview.fxml", "Welcome!", username);
                     } else {
                         System.out.println("Password did not match!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -163,7 +163,7 @@ public class DBUtils {
         int order_cod = 0;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "P0lp37744..");
             if (cap.isEmpty() || cap.length() != 5 || cap.matches("^[0-9]*$") == false) {
                 System.out.println("Incorrect CAP");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -231,7 +231,7 @@ public class DBUtils {
         int orderCode = 0;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "P0lp37744..");
             psInsert = connection.prepareStatement("insert orders (user_id) select user_id from users where username=?");
             psInsert.setString(1, username);
             psInsert.executeUpdate();
@@ -254,7 +254,7 @@ public class DBUtils {
         PreparedStatement psInsert = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "P0lp37744..");
             psInsert = connection.prepareStatement("update orders set " + code + "=" + code + " + ? where order_cod = ? ");
             psInsert.setInt(1, quantity);
             psInsert.setInt(2, orderCode);
@@ -269,7 +269,7 @@ public class DBUtils {
         PreparedStatement psInsert = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_login", "root", "P0lp37744..");
             psInsert = connection.prepareStatement("delete from orders where order_cod = ? ");
             psInsert.setInt(1, orderCode);
             psInsert.executeUpdate();
