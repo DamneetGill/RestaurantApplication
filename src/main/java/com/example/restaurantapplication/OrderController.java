@@ -282,70 +282,86 @@ public class OrderController implements Initializable {
             e.printStackTrace();
         }
 
+
         button_continue.setOnAction(new EventHandler<ActionEvent>() {
+
             @Override
             public void handle(ActionEvent event) {
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("summary-overview.fxml"));
+                if (!label_total_price.getText().startsWith("0.00")) {
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("summary-overview.fxml"));
 
-                try {
-                    Parent root = (Parent) loader.load();
-                    SummaryController summaryController = loader.<SummaryController>getController();
-                    summaryController.setOrderedGrid(orderedCodes, plates, count);
-                    summaryController.setSubtotalLabel(label_total_price.getText().toString());
-                    summaryController.setTotalLabel(label_total_price.getText().toString());
-                    summaryController.setUsernameLabel(username);
-                    summaryController.setUsername(username);
-                    summaryController.setOrderNumber(orderCode);
-                    summaryController.setOrderNumberLabel(orderCode);
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    try {
+                        Parent root = (Parent) loader.load();
+                        SummaryController summaryController = loader.<SummaryController>getController();
+                        summaryController.setOrderedGrid(orderedCodes, plates, count);
+                        summaryController.setSubtotalLabel(label_total_price.getText().toString());
+                        summaryController.setTotalLabel(label_total_price.getText().toString());
+                        summaryController.setUsernameLabel(username);
+                        summaryController.setUsername(username);
+                        summaryController.setOrderNumber(orderCode);
+                        summaryController.setOrderNumberLabel(orderCode);
+                        Scene scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        });
+        button_cancel_order.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                label_total_price.setText("0.00");
+                DBUtils.cancelOrder(event, orderCode);
+                for (int i = 0; i < orderedCodes.size(); i++) {
+                    orderedCodes.set(i, "0");
+                }
+            }
+        });
+        button_minus.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if (plateQuantity > 0) {
+                    plateQuantity--;
+                    label_plate_quantity.setText(Integer.toString(plateQuantity));
+                }
+            }
+        });
+        button_plus.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if (plateQuantity < 9) {
+                    plateQuantity++;
+                    label_plate_quantity.setText(Integer.toString(plateQuantity));
+                }
+            }
+        });
+        button_add_to_cart.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if (!label_plate_quantity.getText().matches("0")) {
+
+                    if (label_total_price.getText().matches("0.00")) {
+                        firstPlate = true;
+                        setOrderCode(DBUtils.newOrder(event, username));
+                    }
+
+                    Double currentTotal = Double.parseDouble(label_total_price.getText().toString());
+                    Integer quantity = Integer.parseInt(label_plate_quantity.getText().toString());
+                    Double plateTotal = Double.parseDouble(label_chosen_plate_price.getText().toString());
+                    plateTotal *= quantity;
+                    currentTotal += plateTotal;
+                    String current = String.format(Locale.US, "%.2f", currentTotal);
+                    label_total_price.setText(current);
+                    orderedCodes.add(code);
+                    count.add(quantity);
+
+                    DBUtils.addToOrder(event, code, orderCode, quantity);
                 }
             }
         });
     }
 
-    public void handlePlusButton(ActionEvent e) {
-        if (plateQuantity < 9) {
-            plateQuantity++;
-            label_plate_quantity.setText(Integer.toString(plateQuantity));
-        }
-    }
-
-    public void handleMinusButton(ActionEvent e) {
-        if (plateQuantity > 0) {
-            plateQuantity--;
-            label_plate_quantity.setText(Integer.toString(plateQuantity));
-        }
-    }
-
-    public void handleAddToCartButton(ActionEvent e) {
-        if (!label_plate_quantity.getText().matches("0")) {
-
-            if (label_total_price.getText().matches("0.00")) {
-                firstPlate = true;
-                setOrderCode(DBUtils.newOrder(e, username));
-            }
-
-            Double currentTotal = Double.parseDouble(label_total_price.getText().toString());
-            Integer quantity = Integer.parseInt(label_plate_quantity.getText().toString());
-            Double plateTotal = Double.parseDouble(label_chosen_plate_price.getText().toString());
-            plateTotal *= quantity;
-            currentTotal += plateTotal;
-            String current = String.format(Locale.US, "%.2f", currentTotal);
-            label_total_price.setText(current);
-            orderedCodes.add(code);
-            count.add(quantity);
-
-            DBUtils.addToOrder(e, code, orderCode, quantity);
-        }
-    }
-
-    public void handleCancelOrderButton(ActionEvent e) {
-        label_total_price.setText("0.00");
-        DBUtils.cancelOrder(e, orderCode);
-    }
 }

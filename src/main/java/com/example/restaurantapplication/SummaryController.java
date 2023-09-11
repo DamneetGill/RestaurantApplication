@@ -72,30 +72,32 @@ public class SummaryController implements Initializable {
         try {
             for (Plate plate : plates) {
                 for (int j = 0; j < orderedCodes.size(); j++) {
-                    if (plate.getCode().matches(orderedCodes.get(j))) {
-                        FXMLLoader fxmlLoader = new FXMLLoader();
-                        fxmlLoader.setLocation(getClass().getResource("base-summary-overview.fxml"));
-                        AnchorPane anchorPane = fxmlLoader.load();
-                        BaseSummaryController baseSummaryController = fxmlLoader.getController();
-                        baseSummaryController.setOrderedData(plate, count.get(j));
+                    if (!orderedCodes.get(j).matches("0")) {
+                        if (plate.getCode().matches(orderedCodes.get(j))) {
+                            FXMLLoader fxmlLoader = new FXMLLoader();
+                            fxmlLoader.setLocation(getClass().getResource("base-summary-overview.fxml"));
+                            AnchorPane anchorPane = fxmlLoader.load();
+                            BaseSummaryController baseSummaryController = fxmlLoader.getController();
+                            baseSummaryController.setOrderedData(plate, count.get(j));
 
-                        if (column == 1) {
-                            column = 0;
-                            row++;
+                            if (column == 1) {
+                                column = 0;
+                                row++;
+                            }
+                            column++;
+                            grid_ordered.add(anchorPane, column, row);
+                            //set grid width
+                            grid_ordered.setMinWidth(Region.USE_PREF_SIZE);
+                            grid_ordered.setPrefWidth(Region.USE_PREF_SIZE);
+                            grid_ordered.setMaxWidth(Region.USE_PREF_SIZE);
+
+                            //set grid height
+                            grid_ordered.setMinHeight(Region.USE_COMPUTED_SIZE);
+                            grid_ordered.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                            grid_ordered.setMaxHeight(Region.USE_PREF_SIZE);
+
+                            GridPane.setMargin(anchorPane, new Insets(10));
                         }
-                        column++;
-                        grid_ordered.add(anchorPane, column, row);
-                        //set grid width
-                        grid_ordered.setMinWidth(Region.USE_PREF_SIZE);
-                        grid_ordered.setPrefWidth(Region.USE_PREF_SIZE);
-                        grid_ordered.setMaxWidth(Region.USE_PREF_SIZE);
-
-                        //set grid height
-                        grid_ordered.setMinHeight(Region.USE_COMPUTED_SIZE);
-                        grid_ordered.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                        grid_ordered.setMaxHeight(Region.USE_PREF_SIZE);
-
-                        GridPane.setMargin(anchorPane, new Insets(10));
                     }
                 }
             }
