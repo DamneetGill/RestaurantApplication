@@ -323,22 +323,25 @@ public class OrderController implements Initializable {
     }
 
     public void handleAddToCartButton(ActionEvent e) {
-        if (label_total_price.getText().matches("0.00")) {
-            firstPlate = true;
-            setOrderCode(DBUtils.newOrder(e, username));
+        if (!label_plate_quantity.getText().matches("0")) {
+
+            if (label_total_price.getText().matches("0.00")) {
+                firstPlate = true;
+                setOrderCode(DBUtils.newOrder(e, username));
+            }
+
+            Double currentTotal = Double.parseDouble(label_total_price.getText().toString());
+            Integer quantity = Integer.parseInt(label_plate_quantity.getText().toString());
+            Double plateTotal = Double.parseDouble(label_chosen_plate_price.getText().toString());
+            plateTotal *= quantity;
+            currentTotal += plateTotal;
+            String current = String.format(Locale.US, "%.2f", currentTotal);
+            label_total_price.setText(current);
+            orderedCodes.add(code);
+            count.add(quantity);
+
+            DBUtils.addToOrder(e, code, orderCode, quantity);
         }
-
-        Double currentTotal = Double.parseDouble(label_total_price.getText().toString());
-        Integer quantity = Integer.parseInt(label_plate_quantity.getText().toString());
-        Double plateTotal = Double.parseDouble(label_chosen_plate_price.getText().toString());
-        plateTotal *= quantity;
-        currentTotal += plateTotal;
-        String current = String.format(Locale.US, "%.2f", currentTotal);
-        label_total_price.setText(current);
-        orderedCodes.add(code);
-        count.add(quantity);
-
-        DBUtils.addToOrder(e, code, orderCode, quantity);
     }
 
     public void handleCancelOrderButton(ActionEvent e) {

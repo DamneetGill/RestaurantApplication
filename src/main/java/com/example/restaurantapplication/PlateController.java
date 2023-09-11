@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class PlateController {
@@ -30,7 +31,8 @@ public class PlateController {
         this.plate = plate;
         this.myListener = myListener;
         label_name.setText(plate.getPlateName());
-        label_price.setText("€" + Double.toString(plate.getPlatePrice()));
+        String labelPrice = String.format(Locale.US, "%.2f", plate.getPlatePrice());
+        label_price.setText("€" + labelPrice);
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(plate.getImageLink())));
         img_plate.setImage(image);
     }
