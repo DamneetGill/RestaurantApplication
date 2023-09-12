@@ -219,6 +219,29 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (psInsert != null) {
+                try {
+                    psInsert.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -245,7 +268,38 @@ public class DBUtils {
             return orderCode;
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (result != null) {
+                try {
+                    result.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (psInsert != null) {
+                try {
+                    psInsert.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
+
+
     }
 
     public static void addToOrder(ActionEvent event, String code, int orderCode, int quantity) {
@@ -260,6 +314,22 @@ public class DBUtils {
             psInsert.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            if (psInsert != null) {
+                try {
+                    psInsert.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -274,6 +344,22 @@ public class DBUtils {
             psInsert.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            if (psInsert != null) {
+                try {
+                    psInsert.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

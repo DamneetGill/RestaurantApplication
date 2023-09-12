@@ -13,6 +13,7 @@ import javafx.scene.layout.Region;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -119,7 +120,9 @@ public class SummaryController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if (!tf_street.getText().trim().isEmpty() && !tf_cap.getText().trim().isEmpty() && !tf_city.getText().trim().isEmpty() && !tf_house_number.getText().trim().isEmpty()) {
+
                     DBUtils.addressInfo(event, username, tf_street.getText().toString(), tf_house_number.getText().toString(), tf_cap.getText().toString(), tf_city.getText().toString());
+
                 } else {
                     System.out.println("Please fill in all information");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
